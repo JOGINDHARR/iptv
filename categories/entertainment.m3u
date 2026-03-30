@@ -235,8 +235,6 @@ https://l1-xl1.myanmarnet.com/relay/channelk/ch1/stream.m3u8
 https://app.viloud.tv/hls/channel/aaf404bee904cff424bb5d1f6fdf9333.m3u8
 #EXTINF:-1 tvg-id="CharanaTV.lk@SD" tvg-logo="https://www.lyngsat.com/logo/tv/cc/charana-tv-lk.png" group-title="Education;Entertainment",Charana TV (360p)
 https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8
-#EXTINF:-1 tvg-id="ChebabTV.dz@SD" tvg-logo="https://i.imgur.com/yp2clII.png" group-title="Entertainment",Chebab TV (576p)
-http://5.253.46.190:8000/play/a0fj/index.m3u8
 #EXTINF:-1 tvg-id="ChileChannel.cl@SD" tvg-logo="https://i.imgur.com/F1it6fh.png" group-title="Entertainment;Travel",Chile Channel (720p)
 https://v2.tustreaming.cl/chilechannel/index.m3u8
 #EXTINF:-1 tvg-id="ChromaTV.br@SD" tvg-logo="https://i.imgur.com/SnaIMgj.png" group-title="Entertainment",Chroma TV (480p)
@@ -397,8 +395,6 @@ http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs26
 https://tvpass.org/live/FuseEast/hd
 #EXTINF:-1 tvg-id="FX.us@East" tvg-logo="https://i.imgur.com/ZScwrpi.png" group-title="Entertainment",FX East (720p) [Not 24/7]
 https://tvpass.org/live/FXEast/hd
-#EXTINF:-1 tvg-id="FXLatinAmerica.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/FX_International_logo.svg/960px-FX_International_logo.svg.png" group-title="Entertainment",FX Latin America (1080p)
-http://38.199.6.1:17001/play/a04u/index.m3u8
 #EXTINF:-1 tvg-id="FX1.ir@SD" tvg-logo="https://www.lyngsat.com/logo/tv/ff/fx-1.png" group-title="Entertainment",FX TV 1
 https://fxtvhls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="FX2.ir@SD" tvg-logo="https://www.lyngsat.com/logo/tv/ff/fx-two-fr.png" group-title="Entertainment",FX TV 2
@@ -550,8 +546,6 @@ https://amg02159-amg02159c7-samsung-in-4001.playouts.now.amagi.tv/playlist/amg02
 https://cvtv.cvalley.net/hls/KCWECW/KCWECW.m3u8
 #EXTINF:-1 tvg-id="KeralaVision.in@SD" tvg-logo="https://i.imgur.com/SWNjyyp.png" group-title="Entertainment",Kerala Vision (576p)
 https://mumt03.tangotv.in/KERALAVISION/index.m3u8
-#EXTINF:-1 tvg-id="KFMBDT2.us@SD" tvg-logo="https://i.imgur.com/GCB3vun.png" group-title="Entertainment",KFMB-DT2 (720p) [Not 24/7]
-https://tvpass.org/live/cw-kfmbtv2-san-diego-ca/hd
 #EXTINF:-1 tvg-id="KFTRDT1.us@SD" tvg-logo="https://i.imgur.com/e3Z2wzG.png" group-title="Entertainment",KFTR-DT1 [Geo-blocked]
 https://streaming-live-fcdn.api.prd.univisionnow.com/kftr/kftr.isml/hls/kftr.m3u8
 #EXTINF:-1 tvg-id="KhushbooBangla.in@SD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_KHUSHBOO_BANGLA/images/LOGO_HD/image.png" group-title="Entertainment",Khushboo Bangla (720p)
@@ -612,8 +606,8 @@ https://live-evg1.tv360.bitel.com.pe/bitel/latele/playlist.m3u8
 https://c9851ec-rbm-hilv-fsly.cdn.redbee.live/L22/6d35e26e/1bffdaaf.isml/.m3u8
 #EXTINF:-1 tvg-id="LatacungaTV.ec@SD" tvg-logo="https://i.imgur.com/YjgYYH3.png" group-title="Entertainment",Latacunga TV (360p)
 https://stmv1.voxtvhd.com.br/latacungatv/latacungatv/playlist.m3u8
-#EXTINF:-1 tvg-id="LATV.us@SD" tvg-logo="https://i.imgur.com/fJxySUg.png" group-title="Entertainment",LATV (720p) [Geo-blocked]
-https://amg00779-latv-amg00779c1-klowdtv-us-2135.playouts.now.amagi.tv/playlist/amg00779-latvnetworkllc-latv-klowdtvus/playlist.m3u8
+#EXTINF:-1 tvg-id="LATV.us@SD" tvg-logo="https://i.imgur.com/fJxySUg.png" group-title="Entertainment",LATV (1080p) [Geo-blocked]
+https://amg00779-latv-amg00779c1-cineverse-us-1746.playouts.now.amagi.tv/playlist/amg00779-latvnetworkllc-latv-cineverseus/playlist.m3u8
 #EXTINF:-1 tvg-id="LietuvosRytasTV.lt@SD" tvg-logo="https://i.imgur.com/5wpxVI0.png" group-title="Entertainment",Lietuvos Rytas TV (1080p)
 https://live.lietuvosryto.tv/live/hls/eteris.m3u8
 #EXTINF:-1 tvg-id="Liv.fi@SD" tvg-logo="https://i.imgur.com/k6NsXBj.png" group-title="Entertainment",Liv (720p)
@@ -961,6 +955,8 @@ http://103.229.254.25:7001/play/a0db/index.m3u8
 https://live20.bozztv.com/giatv/giatv-Infinittyott/Infinittyott/playlist.m3u8
 #EXTINF:-1 tvg-id="SowetoTV.za@SD" tvg-logo="https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg" group-title="Entertainment;Family",Soweto TV (576p)
 https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Spondon.in@SD" tvg-logo="https://www.spondontv.com/wp-content/uploads/2025/10/cropped-SPONDON_Blue-Violet_1-copy-300x100.png" group-title="Entertainment",Spondon (1080p)
+https://nktv.smartstream.video/smartstream-us/spondon/spondon/playlist.m3u8
 #EXTINF:-1 tvg-id="STEuropeChannel.it@SD" tvg-logo="https://i.imgur.com/M5j7y2N.png" group-title="Entertainment",ST Europe Channel (720p)
 https://5f22d76e220e1.streamlock.net/steuropetv/steuropetv/playlist.m3u8
 #EXTINF:-1 tvg-id="StarChannel.gr@SD" tvg-logo="https://i.imgur.com/6NUpxhr.png" group-title="Entertainment",STAR HD (1080p) [Non geo blocked]
@@ -1003,8 +999,6 @@ https://stream-134630.castr.net/5fe35eae8c53540cab83659a/live_17ad3c50323511f08f
 https://live3.tdm.com.mo/ch6/hd_ch6.live/playlist.m3u8
 #EXTINF:-1 tvg-id="TeleBoston.us@SD" tvg-logo="https://i.imgur.com/xeTtup8.png" group-title="Entertainment",Tele Boston (480p)
 https://tv2.fastcast4u.com:3238/live/radiotelebostonlive.m3u8
-#EXTINF:-1 tvg-id="TeleMaroc.ma@SD" tvg-logo="https://freebox.cdn.scw.iliad.fr/medium_Tele_Maroc_900x800_ffdee4d2e4.png" group-title="Culture;Entertainment;News",Télé Maroc (1080p)
-http://5.253.46.190:8000/play/a0cb/index.m3u8
 #EXTINF:-1 tvg-id="TeleMas.cr@SD" tvg-logo="https://i.imgur.com/5Rc8mA5.png" group-title="Entertainment",TeleMas (480p) [Geo-blocked]
 https://mist01.homestream.fun/hls/tlmas904/0_1/index.m3u8
 #EXTINF:-1 tvg-id="Telemax.do@SD" tvg-logo="https://i.imgur.com/QvKmjvV.png" group-title="Entertainment",Telemax (1080p) [Not 24/7]
@@ -1053,8 +1047,6 @@ https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8
 https://live20.bozztv.com/giatvplayout7/giatv-208343/playlist.m3u8
 #EXTINF:-1 tvg-id="TV1.lk@SD" tvg-logo="https://i.imgur.com/QShk1BV.png" group-title="Entertainment",TV 1 (576p)
 https://d3ssd0juqbxbw.cloudfront.net/mtvsinstlive/master.m3u8
-#EXTINF:-1 tvg-id="TV6.dz@SD" tvg-logo="https://i.imgur.com/nu0CpJn.png" group-title="Entertainment",TV6 El-Chebabia (1080p)
-http://5.253.46.190:8000/play/a0ep/index.m3u8
 #EXTINF:-1 tvg-id="TVCanalSur.do@SD" tvg-logo="https://www.lyngsat.com/logo/tv/tt/tv-canal-sur-do.png" group-title="Entertainment",TV Canal Sur (1080p)
 https://streamtvs.tvcanalsur.com.do/hls/stream/index.m3u8
 #EXTINF:-1 tvg-id="TVCentro272HD.hn@SD" tvg-logo="https://i.imgur.com/Wo2scQf.jpg" group-title="Entertainment",TV Centro 27.2 HD (720p)

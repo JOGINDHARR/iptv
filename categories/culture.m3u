@@ -25,10 +25,6 @@ https://goccn.cloud/hls/amanitv/index.m3u8
 https://2-fss-2.streamhoster.com/pl_124/206820-4338160-1/playlist.m3u8
 #EXTINF:-1 tvg-id="AsiriTV.pe@SD" tvg-logo="https://i.imgur.com/7bGVFBa.png" group-title="Culture",AsiriTV (720p) [Not 24/7]
 https://video2.lhdserver.es/asiritv/live.m3u8
-#EXTINF:-1 tvg-id="Athaqafia.ma@HD" tvg-logo="https://freebox.cdn.scw.iliad.fr/medium_Athaqafia_fdc90e055e.png" group-title="Culture",Athaqafia (1080p)
-http://5.253.46.190:8000/play/a0ae/index.m3u8
-#EXTINF:-1 tvg-id="Athaqafia.ma@SD" tvg-logo="https://freebox.cdn.scw.iliad.fr/medium_Athaqafia_fdc90e055e.png" group-title="Culture",Athaqafia (576p)
-http://5.253.46.190:8000/play/a0eb/index.m3u8
 #EXTINF:-1 tvg-id="ATR.ua@SD" tvg-logo="https://i.imgur.com/lRJAXC7.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0" group-title="Culture",ATR (720p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0
 https://atr-live.cdn-01.cosmonova.net.ua/hls/atr_ua_hi/index.m3u8
@@ -44,8 +40,6 @@ https://cdn10jtedge.indihometv.com/atm/DASH/balitv/manifest.mpd
 https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_four_hd/iptv_mse_v0_hevc.mpd
 #EXTINF:-1 tvg-id="BBCFour.uk@UKHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BBC_Four_logo_2021.svg/960px-BBC_Four_logo_2021.svg.png" group-title="Culture;Documentary",BBC Four UK HD
 https://streamer.nexyl.uk/48559ccd-6400-457d-8acc-06b9e24c2ed8.m3u8
-#EXTINF:-1 tvg-id="BerbereTV.fr@SD" tvg-logo="https://i.imgur.com/Uc2PAmL.png" group-title="Culture",Berbere TV (1080p)
-http://5.253.46.190:8000/play/a0fi/index.m3u8
 #EXTINF:-1 tvg-id="Bonairetv.bq@SD" tvg-logo="https://i.ibb.co/rG8pHh9/bonaire-tv-logo-596x150.png" group-title="Culture",Bonaire.tv (1080p) [Not 24/7]
 https://media.streambrothers.com:1936/8506/8506/playlist.m3u8
 #EXTINF:-1 tvg-id="BXArts.us@SD" tvg-logo="https://i.imgur.com/PF71rdZ.png" group-title="Culture",BX Arts (720p)
@@ -291,8 +285,6 @@ https://m.iostream.it/hls/teatrotv/teatrotv.m3u8
 #EXTINF:-1 tvg-id="TeleAmiga.co@SD" tvg-logo="https://i.imgur.com/gBZFZNv.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160" group-title="Culture",Tele Amiga (480p) [Not 24/7]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160
 https://liveingesta118.cdnmedia.tv/teleamigatvlive/smil:dvrlive.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="TeleMaroc.ma@SD" tvg-logo="https://freebox.cdn.scw.iliad.fr/medium_Tele_Maroc_900x800_ffdee4d2e4.png" group-title="Culture;Entertainment;News",Télé Maroc (1080p)
-http://5.253.46.190:8000/play/a0cb/index.m3u8
 #EXTINF:-1 tvg-id="Telepace2.it@SD" tvg-logo="https://i.imgur.com/qvcf6QC.png" group-title="Culture;Religious",Telepace 2 (1080p)
 https://zkpywrbgdbeg-hls-live.mariatvcdn.it/teleradiopace2/254c9b5c52a73a94ef0f6169cbd05dc2.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="TVCuatro42.mx@SD" tvg-logo="https://i.imgur.com/Of044Jx.png" group-title="Culture",TV Cuatro 4.2 (1080p)

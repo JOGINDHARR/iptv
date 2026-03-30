@@ -521,7 +521,7 @@ https://hdbox.chunklistv.com/live?stream=megabox
 https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/radiokaraoke.m3u8
 #EXTINF:-1 tvg-id="MelodyFM.jo@SD" tvg-logo="https://i.imgur.com/J8omcNz.png" group-title="Music",Melody FM Jordan (720p) [Not 24/7]
 https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8
-#EXTINF:-1 tvg-id="MelodyHits.ca@SD" tvg-logo="https://i.imgur.com/OOMkVrU.png" group-title="Music",Melody Hits
+#EXTINF:-1 tvg-id="MelodyHits.ca@SD" tvg-logo="https://i.imgur.com/OOMkVrU.png" group-title="Music",Melody Hits (576p)
 https://mumt03.tangotv.in/MELODYHITS/index.m3u8
 #EXTINF:-1 tvg-id="MemoriasdelCorazon.co@SD" tvg-logo="https://i.imgur.com/sVLDzzM.png" group-title="Music",Memorias del Corazon (480p) [Geo-blocked]
 https://video.xtrematv.com:3401/live/grupomemoriaslive.m3u8
@@ -1057,6 +1057,8 @@ https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Concerts/SA_LIVE_hls_en
 https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Dance/SA_LIVE_hls_enc/master.m3u8
 #EXTINF:-1 tvg-id="TraceBrazuca.fr@SD" tvg-logo="https://i.imgur.com/DFBocPu.png" group-title="Music",TRACE Brazuca (1080p)
 https://amg01131-tracetv-amg01131c4-stirr-us-4390.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="TraceGospel.fr@SD" tvg-logo="https://i.imgur.com/X0UmU3K.png" group-title="Music;Religious",Trace Gospel (1080p)
+https://channels.trace.plus/Traceprod/GOSPEL_FR/.m3u8
 #EXTINF:-1 tvg-id="TraceLatina.fr@SD" tvg-logo="https://i.imgur.com/CUVAi4u.png" group-title="Music",Trace Latina (1080p)
 https://amg01131-tracetv-tracelatina-glewed-vtnk7.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="TraceLatina.uk@SD" tvg-logo="https://i.imgur.com/CUVAi4u.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Music",TRACE Latina (720p)

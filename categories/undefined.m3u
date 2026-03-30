@@ -280,7 +280,7 @@ https://d3s7x6kmqcnb6b.cloudfront.net/d/distro001a/0NEDHNB14204IE5V6CIX/hls3/now
 https://jmp2.uk/plu-5f1acce7f17797000718f9be.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Anandam Abi TV (576p)
 https://mumt02.tangotv.in/ABITV/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Anandam TV
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Anandam TV (576p)
 https://mumt02.tangotv.in/ANANDAMTV/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Ancient Aliens (720p)
 https://jmp2.uk/plu-6887a8fd8e92b5e0a7244e88.m3u8
@@ -485,7 +485,7 @@ https://live.kwikmotion.com/bahry1live/bahry1.smil/playlist.m3u8
 http://cpd.bailen.tv:8080/Playlist_CANAL_24H/playlist.m3u8
 #EXTINF:-1 tvg-id="BalatonTV.hu@SD" tvg-logo="https://balatontelevizio.hu/wp-content/uploads/2020/05/balaton_tv_logo.png" group-title="Undefined",Balaton TV (432p)
 https://stream.iptvservice.eu/hls/balatontv.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Bang Bang TV
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Bang Bang TV (1080p)
 https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/6a98fce2-bf4c-4bfb-91f4-c43851bb3801/manifest.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Banijay Mr Bean Animé (1080p)
 https://amg00627-amg00627c31-rakuten-fr-3991.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanfrcc-rakutenfr/playlist.m3u8
@@ -1745,8 +1745,6 @@ https://jmp2.uk/plu-625464a945b6a200079257d1.m3u8
 https://jmp2.uk/plu-626c2ed933a2890007e91422.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Death Valley Days (1080p)
 https://d49k4i5y48mxv.cloudfront.net/SONO66.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Declassified (720p)
-https://jmp2.uk/plu-62bdaf9cf1bdc500073a8bcb.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Def Jam (720p)
 https://aegis-cloudfront-1.tubi.video/ff2a53ec-9887-4aa3-a9e4-38746eba97de/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",DEFA TV (720p)
@@ -2595,22 +2593,6 @@ https://jmp2.uk/plu-6909fc4b74601d957a380613.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",Haryana Beat (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/haryana-beat/index.m3u8?ads.vf=W4fqQJExwzu
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (1080p)
-https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (1080p)
-https://blueantmediacanada-haunttv-samsungca.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (1080p)
-https://amg01446-blueantmediacan-haunttvaus-samsungnz-xo5xf.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaus-samsungnz/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (1080p)
-https://bamcahaunttvrakuten.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (1080p)
-https://d1ak5jijks54h1.cloudfront.net/Haunt_TV.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV (720p)
-https://aegis-cloudfront-1.tubi.video/69da419c-6bb2-473f-98c3-246153fc909b/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Haunt TV
-https://jmp2.uk/plu-6319f06067a3ee000708af95.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",HauntTV (720p)
-https://jmp2.uk/plu-63934c218ef524000757b122.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Hausmeister Krause
 https://jmp2.uk/plu-622f6faf65be650007f57aab.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Hawaii Five-O
@@ -2686,7 +2668,7 @@ https://jmp2.uk/plu-68bff9a63efb41cd97562e46.m3u8
 https://jmp2.uk/plu-68c014ee337652ee75dab43b.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Highway to Heaven
 https://jmp2.uk/plu-68c015dc6523408b14f54dee.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Hindi Hits
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Hindi Hits (576p)
 https://mumt01.tangotv.in/HINDIHITS/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",HIP HOP TV (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
@@ -2742,26 +2724,8 @@ https://pb-wedgbca8p66er.akamaized.net/playlist.m3u8
 https://liveovh010.cda.pl/zkr7GNESGht4_0Wk12c78A/17538736/2782059/enc124/hometvhdraw/hometvhdraw.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Home.Made.Nation (720p)
 https://jmp2.uk/plu-5dc1cb279c91420009db261d.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (1080p)
+#EXTINF:-1 tvg-id="Homeful.ca@US" tvg-logo="https://www.homefultv.com/wp-content/uploads/2023/03/Homeful_Logo_MintWhite.png" group-title="Undefined",Homeful (1080p)
 https://amg00090-blueantcanada-amg00090c4-samsung-au-819.playouts.now.amagi.tv/playlist/amg00090-blueantfast-homefulworldwide-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (1080p)
-https://amg00090-blueantcanada-amg00090c4-samsung-nz-820.playouts.now.amagi.tv/playlist/amg00090-blueantfast-homefulworldwide-samsungnz/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (1080p)
-https://dn8a6xbnfncub.cloudfront.net/Homeful_US.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (1080p)
-https://aegis-cloudfront-1.tubi.video/9f31e187-3d43-4ed0-81ba-63bd3bc560aa/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (1080p)
-https://amg00090-blueantllc-homefull-xumo-rn9cd.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (720p)
-https://jmp2.uk/plu-67603668f433320008760af1.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (720p)
-https://jmp2.uk/plu-62e92967cd663f0007e604fd.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (720p)
-https://jmp2.uk/plu-64fb1f6e6625510008c00848.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful (720p)
-https://jmp2.uk/plu-66df8aa7abec540008ca8cb6.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homeful
-https://jmp2.uk/plu-65786abdb3801200084c593a.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homerun TV
 https://streams2.sofast.tv/WiseM3U8_29/sofast/cleanhls/master.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Homicide (720p)
@@ -3084,7 +3048,7 @@ https://jmp2.uk/plu-69162ad79505d0f3b1ebf07d.m3u8
 https://jmp2.uk/plu-69162af591700f4c4c135c95.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Jornada nas Estrelas Voyager
 https://jmp2.uk/plu-69162b1ef189e235142b17ab.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Josh TV
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Josh TV (576p)
 https://mumt03.tangotv.in/JOSHTV/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",JTV Jewelry Love (1080p) [Geo-blocked]
 https://jewelrytv-xumo.amagi.tv/playlist.m3u8
@@ -4017,8 +3981,6 @@ https://aegis-cloudfront-1.tubi.video/07f838db-e5bc-47c9-b2b8-6d7037b06b9b/playl
 https://jmp2.uk/plu-6675c742ca74680008566b88.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Nash Bridges Channel (1080p) [Geo-blocked]
 https://amg00353-amg00353c35-xumo-us-3804.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Nashville
-https://jmp2.uk/plu-65cf8d7428730900087c5907.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",National Lampoon (1080p) [Geo-blocked]
 https://pb-4l6m6c7pca5dy.akamaized.net/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Naturaleza Salvaje (1080p) [Geo-blocked]
@@ -4040,20 +4002,6 @@ https://jmp2.uk/plu-5812bd9f249444e05d09cc4e.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",NatureStream.tv (720p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/naturestreamtv/master.m3u8?ads.vf=igg3JlWa1e0
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime (1080p)
-https://amg00090-blueantllc-lovenature-au-samsungau-wggcn.amagi.tv/playlist/amg00090-blueantllc-lovenature-au-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime (1080p)
-https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime (1080p)
-https://amg00090-blueantllc-lovenatureau-samsungnz-r3iaz.amagi.tv/playlist/amg00090-blueantllc-lovenatureau-samsungnz/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime (1080p)
-https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime (720p)
-https://jmp2.uk/plu-681ba2ad93d3d19bcab47433.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime
-https://jmp2.uk/plu-681ba2729624e6275efe0044.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NatureTime Finland (1080p)
-https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",NBA FAST Channel (720p)
 https://live-manifest.production-public.tubi.io/live/553b8d5e-fd2a-4a61-bdfa-73b34c299d75/playlist.m3u8
 #EXTINF:-1 tvg-id="WTMJDT1.us@SD" tvg-logo="https://i.imgur.com/HC85eBq.png" group-title="Undefined",NBC 4 Milwaukee WI (WTMJ) (720p)
@@ -4268,6 +4216,8 @@ https://jmp2.uk/plu-62cd971cec90c20007081050.m3u8
 https://jmp2.uk/plu-62cd9f1cda044a00077b8f41.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",On the Case
 https://jmp2.uk/plu-62cdad7b5c38c00007f566c2.m3u8
+#EXTINF:-1 tvg-id="OnTV.in@SD" tvg-logo="https://www.lyngsat.com/logo/tv/oo/on-tv-in.png" group-title="Undefined",On TV (576p)
+https://mumt03.tangotv.in/ONTV/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",ONE Championship TV (720p)
 https://jmp2.uk/plu-668c5d3bfd9eb2000882bb50.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Operation Repo (1080p)
@@ -4312,7 +4262,7 @@ https://jmp2.uk/plu-683f67fde5f82715941c047b.m3u8
 https://jmp2.uk/plu-65649791954b020008d09565.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Pacific Blue
 https://jmp2.uk/plu-68d279fc840d8021ee1f1e50.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Padharo Sa
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Padharo Sa (576p)
 https://mumt03.tangotv.in/PADHAROSA/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Paisajes por Stingray
 https://jmp2.uk/plu-5f4fed840a2764000720d966.m3u8
@@ -5193,6 +5143,8 @@ https://cdn-th-vip.livestreaming.in.th/policetv/policetv/playlist.m3u8
 http://78.130.250.2:8023/play/a05t/index.m3u8
 #EXTINF:-1 tvg-id="PolsatSport1.pl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Polsat_Sport_1_2024.svg/500px-Polsat_Sport_1_2024.svg.png" group-title="Undefined",Polsat Sport 1 (1080p) [Geo-blocked]
 http://cdn-s-lb2.pluscdn.pl/lv/1544303/939/dash/7f74b079/live.mpd
+#EXTINF:-1 tvg-id="PolsatSport3.pl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Polsat_Sport_3_2024.svg/500px-Polsat_Sport_3_2024.svg.png" group-title="Undefined",Polsat Sport 3 (1080p) [Geo-blocked]
+https://cdn-s-lb2.pluscdn.pl/ch/1455832/117/dash/790ff37c/live.mpd
 #EXTINF:-1 tvg-id="PomonaInternetStreamingChannel.us@SD" tvg-logo="https://i.imgur.com/80gaUbq.png" group-title="Undefined",Pomona Internet Streaming Channel (Pomona CA) (720p)
 https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8
 #EXTINF:-1 tvg-id="PONTV.id@SD" tvg-logo="https://i.imgur.com/P5erWzm.png" group-title="Undefined",PONTV (720p)
@@ -6849,7 +6801,7 @@ https://gjirafa-video-live.gjirafa.net/gjvideo-livestream-specific/1z8-byc-4ee-l
 https://unlimited1-us.dps.live/inet2/inet2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="TaazaTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Taaza_TV.png" group-title="Undefined",Taaza TV (720p)
 https://live.we2live.in/taazatv/live/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Tadka
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Tadka (576p)
 https://mumt03.tangotv.in/TADKA/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Taftan
 https://ncdn.telewebion.ir/taftan/live/playlist.m3u8
@@ -7511,10 +7463,6 @@ https://jmp2.uk/plu-65e977c48b24c8000805b9ef.m3u8
 https://jmp2.uk/plu-65e97856ec9fda0008cb453c.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Tosh.0
 https://jmp2.uk/plu-5dae084727c8af0009fe40a4.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Total Crime (1080p)
-https://aegis-cloudfront-1.tubi.video/b062c287-a170-47df-99e4-f5dcd441ee59/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Total Crime (720p)
-https://jmp2.uk/plu-62e93b8eb8e02600071f8b1d.m3u8
 #EXTINF:-1 tvg-id="TotalTVHaryana.in@SD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_TOTAL_TV/images/LOGO_HD/image.png" group-title="Undefined",Total TV Haryana (576p)
 https://cdn-2.pishow.tv/live/1522/master.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Totally Turtles (720p)
