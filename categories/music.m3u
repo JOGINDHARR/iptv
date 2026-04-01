@@ -222,6 +222,9 @@ https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8
 http://46.249.95.140:8081/hls/data.m3u8
 #EXTINF:-1 tvg-id="DTRMusic1.ru@HD" tvg-logo="https://i.imgur.com/3picWDA.png" group-title="Music",DTR Music 1 (720p)
 https://kino-stream.online/hls/DTRMUSIC1.m3u8
+#EXTINF:-1 tvg-id="E40.py@SD" tvg-logo="https://i.imgur.com/0RypDUY.png" http-referrer="https://www.estacion40.com.py/" group-title="Music",E40 (1080p)
+#EXTVLCOPT:http-referrer=https://www.estacion40.com.py/
+https://copacotf.desdeparaguay.net/e40tv/e40tv_py_alta/playlist.m3u8?admin=tvaccion
 #EXTINF:-1 tvg-id="EBSMusika.us@SD" tvg-logo="https://i.imgur.com/lSpplhD.png" group-title="Music",EBS Musika (720p)
 https://rpn.bozztv.com/ebstv/ebsmusika/index.m3u8
 #EXTINF:-1 tvg-id="EcuaMundoRadioTV.ec@SD" tvg-logo="https://i.imgur.com/EMe5oWn.jpg" group-title="Music",EcuaMundo Radio TV (720p) [Not 24/7]
@@ -318,6 +321,9 @@ http://158.180.39.89:5033/music.m3u8
 http://158.180.39.89:5033/hayatplus.m3u8
 #EXTINF:-1 tvg-id="Hayatovci.ba@SD" tvg-logo="https://i.imgur.com/eqd3kvW.png" group-title="Music",Hayatovci (1080p)
 http://158.180.39.89:5033/hayatovci.m3u8
+#EXTINF:-1 tvg-id="HEiNow.py@SD" tvg-logo="https://i.imgur.com/oMHiGRN.png" http-referrer="https://www.heinow.com.py/" group-title="Music",HEi Now (1080p)
+#EXTVLCOPT:http-referrer=https://www.heinow.com.py/
+https://copacogen.desdeparaguay.net/heitv/heitv_py_alta/playlist.m3u8?admin=nacion
 #EXTINF:-1 tvg-id="HighVisionTV.us@SD" tvg-logo="https://i.imgur.com/zhCgoru.png" group-title="Music",High Vision (1080p) [Not 24/7]
 https://streamer1.connectto.com/HIGHVISION_WEB_1205/index.m3u8
 #EXTINF:-1 tvg-id="HitradioO3.at@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hitradio_%C3%963.svg/960px-Hitradio_%C3%963.svg.png" group-title="Music",Hitradio O3 (720p)
@@ -372,6 +378,8 @@ http://streaming.toutech.net:1935/live/mp4:jawharafm.sdp/playlist.m3u8
 https://liveovh010.cda.pl/2SHZi_SkX4h0MDflza1PPw/1753748478/3480440/enc121/jazztvhdraw/jazztvhdraw.mpd
 #EXTINF:-1 tvg-id="JazzTV.mk@SD" tvg-logo="https://i.imgur.com/CbQlSFX.png" group-title="Music",Jazz TV (1080p) [Not 24/7]
 https://stream.nasatv.com.mk/jazztv/hls/jazztv_live.m3u8
+#EXTINF:-1 tvg-id="JeddahRadio.sa@SD" tvg-logo="https://i.imgur.com/Q3d7G04.png" group-title="Music",Jeddah Radio (1080p)
+https://live.kwikmotion.com/sbrksajeddahradiolive/srpksajeddahradio/chunks.m3u8
 #EXTINF:-1 tvg-id="JoeFM.be@SD" tvg-logo="https://i.ibb.co/k9KJWzN/320px-Joe-radio-logo-2016-svg.png" group-title="Music",Joe FM (720p) [Not 24/7]
 https://dpp-streamlive-plain.medialaancdn.be/joe_kijklive/plain/hls_hd.m3u8
 #EXTINF:-1 tvg-id="JooMusic.pk@SD" tvg-logo="https://i.imgur.com/KHuKQQL.png" group-title="Music",JooMusic (720p)
@@ -1074,6 +1082,9 @@ https://www.streaming507.net:19360/videotropiq/videotropiq.m3u8
 https://srv2.tropicalmoonmedia.com/cumbiatv/cumbiatv/playlist.m3u8
 #EXTINF:-1 tvg-id="TropicalMusicTV.us@SD" tvg-logo="https://i.imgur.com/h48pwLn.png" group-title="Music",Tropical Music TV (720p)
 https://59a564764e2b6.streamlock.net/vallenato/tropical/playlist.m3u8
+#EXTINF:-1 tvg-id="Tropicalia939FM.py@SD" tvg-logo="https://i.imgur.com/oMML5Ue.png" http-referrer="https://www.gen.com.py/live/" group-title="Music",Tropicalia 93.9 FM (1080p)
+#EXTVLCOPT:http-referrer=https://www.gen.com.py/live/
+https://copacogen.desdeparaguay.net/tropicaliatv/tropicaliatv_py_alta/chunklist.m3u8?admin=nacion
 #EXTINF:-1 tvg-id="TRTMuzik.tr@SD" tvg-logo="https://i.imgur.com/JgUzRH8.png" group-title="Music",TRT Müzik (720p)
 https://tv-trtmuzik.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="TuMusicaHD.do@SD" tvg-logo="https://i.imgur.com/HnjUjog.png" group-title="Music",Tu Musica HD (720p)

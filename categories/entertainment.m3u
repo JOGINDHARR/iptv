@@ -550,6 +550,8 @@ https://streaming-live-fcdn.api.prd.univisionnow.com/kftr/kftr.isml/hls/kftr.m3u
 https://cdn-4.pishow.tv/live/1473/master.m3u8
 #EXTINF:-1 tvg-id="KingsviewTV.ng@SD" tvg-logo="https://i.imgur.com/py1XOXX.png" group-title="Entertainment",Kingsview TV (1080p)
 https://j78dp6reyq5r-hls-live.5centscdn.com/4896_push_1963_001/00cb1f2e4ff89048f2e77e26940c00e6.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="KIX.hk@SD" tvg-logo="https://i.imgur.com/zWcUAdb.png" group-title="Entertainment",KIX
+https://liveh34.vtvprime.vn/hls/KIX/04.m3u8
 #EXTINF:-1 tvg-id="KMBCDT2.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/55/MeTV_Logo.svg/960px-MeTV_Logo.svg.png" group-title="Entertainment",KMBC-DT2 (720p)
 https://cvtv.cvalley.net/hls/KMBCMeTV/KMBCMeTV.m3u8
 #EXTINF:-1 tvg-id="KMCIDT2.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Bounce_TV_logo.svg/960px-Bounce_TV_logo.svg.png" group-title="Entertainment",KMCI-DT1 (720p)
@@ -841,6 +843,9 @@ https://jmp2.uk/plu-5f1212ad1728050007a523b8.m3u8
 https://cdn-2.pishow.tv/live/1241/master.m3u8
 #EXTINF:-1 tvg-id="PopstarTV.us@SD" tvg-logo="https://i.imgur.com/d4xEiXX.png" group-title="Entertainment",Popstar! TV (1080p)
 https://linear-10.frequency.stream/dist/stirr/10/hls/master/playlist.m3u8
+#EXTINF:-1 tvg-id="PopuTV.py@SD" tvg-logo="https://i.imgur.com/UqCogyZ.png" http-referrer="https://www.popular.com.py/" group-title="Entertainment",Popu TV (1080p)
+#EXTVLCOPT:http-referrer=https://www.popular.com.py/
+https://copacogen.desdeparaguay.net/universotv/universotv_py_alta/playlist.m3u8?admin=nacion
 #EXTINF:-1 tvg-id="PowerMaxRadioTV.ar@SD" tvg-logo="https://i.ibb.co/qgZLYDj/channels4-profile-6.jpg" group-title="Entertainment",Power Max Radio TV (720p)
 https://videostream.shockmedia.com.ar:19360/radio1045/radio1045.m3u8
 #EXTINF:-1 tvg-id="PRIDEtvLATAM.cl@HD" tvg-logo="https://neotv.cl/img/pridetv-512.png" group-title="Entertainment;Lifestyle;Music",PRIDEtv LATAM (1080p)

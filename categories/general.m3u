@@ -125,6 +125,9 @@ https://c.mjh.nz/abc-tas.m3u8
 https://c.mjh.nz/abc-vic.m3u8
 #EXTINF:-1 tvg-id="ABCTV.au@WA" tvg-logo="https://i.imgur.com/DPVQSjM.png" group-title="General",ABC TV WA (720p)
 https://c.mjh.nz/abc-wa.m3u8
+#EXTINF:-1 tvg-id="ABCTVParaguay.py@SD" tvg-logo="https://i.imgur.com/OqfBMGy.png" http-referrer="https://www.abc.com.py/" group-title="General",ABC-TV Paraguay
+#EXTVLCOPT:http-referrer=https://www.abc.com.py/
+http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/7.m3u8
 #EXTINF:-1 tvg-id="ABN.kr@SD" tvg-logo="https://www.abn.co.kr/resources/images/logo.png" group-title="General",ABN TV (720p)
 https://vod2.abn.co.kr/IPHONE/abn.m3u8
 #EXTINF:-1 tvg-id="AbyaYalaTV.bo@SD" tvg-logo="https://abyayala.tv.bo/wp-content/uploads/2024/04/MOSCA-BLANCA-OK-308x189.png" group-title="General",Abya Yala TV
@@ -320,7 +323,7 @@ https://live-antenne-reunion.zeop.tv/live/c3eds/antreunihd/hls_fta/antreunihd.m3
 #EXTINF:-1 tvg-id="AntofagastaTV.cl@SD" tvg-logo="https://i.imgur.com/XIQr0fs.png" group-title="General",Antofagasta TV (ATV) (1080p)
 https://unlimited6-cl.dps.live/atv/atv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="ANTV.id@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Antv_logo.svg/960px-Antv_logo.svg.png" group-title="General",ANTV (576i)
-http://175.158.57.130:8888/stream/channelid/1272719645
+http://202.80.222.20/cdn/iptv/Tvod/001/channel2000022/1024.m3u8
 #EXTINF:-1 tvg-id="AnzoateguiTV.ve@SD" tvg-logo="https://i.imgur.com/SLqrEOz.png" group-title="General",Anzoátegui TV (360p) [Not 24/7]
 https://vcp2.myplaytv.com/anzoateguitv/anzoateguitv/playlist.m3u8
 #EXTINF:-1 tvg-id="ApnaChannel.pk@SD" tvg-logo="https://i.imgur.com/ICSA4W6.png" group-title="General",Apna Channel (576p)
@@ -1655,6 +1658,9 @@ http://tvn1.chowdhury-shaheb.com/gazitv/index.m3u8
 https://goliveafrica.media:9998/live/647460ac1ddd6/index.m3u8
 #EXTINF:-1 tvg-id="GDSTV.ge@SD" tvg-logo="https://i.imgur.com/gv61tFf.png" group-title="General",GDS TV
 http://31.146.5.178:8087/play/a00a/index.m3u8
+#EXTINF:-1 tvg-id="Gen.py@SD" tvg-logo="https://i.imgur.com/vEMnZF4.png" http-referrer="https://www.gen.com.py/" group-title="General",Gen
+#EXTVLCOPT:http-referrer=https://www.gen.com.py/
+https://copacogen.desdeparaguay.net/gentv/gentv_py_alta/playlist.m3u8?admin=nacion
 #EXTINF:-1 tvg-id="GHCanadaTV.ca@SD" tvg-logo="https://www.lyngsat.com/logo/tv/gg/gh-canada-tv-ca.png" group-title="General",GH Canada TV
 https://stream.bozztv.com/tvstat-tamar/tvstat-tamar/playlist.m3u8
 #EXTINF:-1 tvg-id="GHTelevision.do@SD" tvg-logo="https://i.imgur.com/xhkiiO3.png" group-title="General",GH Television (1080p) [Not 24/7]
@@ -2246,6 +2252,9 @@ https://laotra-1-23-secure2.akamaized.net/master.m3u8
 https://live.larimartv.net/livelan/stream.m3u8
 #EXTINF:-1 tvg-id="LasEstrellas.mx@SD" tvg-logo="https://i.imgur.com/g5ShxZ7.png" group-title="General",Las Estrellas (1080p)
 https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8
+#EXTINF:-1 tvg-id="Latele.py@SD" tvg-logo="https://i.imgur.com/Qcf6Qev.png" http-referrer="https://www.latele.com.py/en-vivo" group-title="General",Latele (1080p)
+#EXTVLCOPT:http-referrer=https://www.latele.com.py/en-vivo
+https://copacotf.desdeparaguay.net/latele/latele_py_alta/playlist.m3u8?admin=tvaccion
 #EXTINF:-1 tvg-id="LatestTV.uk@SD" tvg-logo="https://i.imgur.com/Cl1iGEb.jpeg" group-title="General",Latest TV (480p)
 https://5a0e89631aa14.streamlock.net/live/LatestTelevision/playlist.m3u8
 #EXTINF:-1 tvg-id="Latina.pe@SD" tvg-logo="https://i.imgur.com/MOsWriY.png" group-title="General",Latina (720p)
@@ -2555,6 +2564,9 @@ https://moldovatv.ro/live-tv/live.m3u8
 https://cloud2.streaminglivehd.com:1936/monagasvision-2/monagasvision-2/playlist.m3u8
 #EXTINF:-1 tvg-id="MontecristiDigital8.do@HD" tvg-logo="https://imgur.com/ExoOHQI.jpeg" group-title="General",Montecristi Digital 8 [Geo-blocked]
 https://soportedvb.click:3400/live/montecristitvlive.m3u8
+#EXTINF:-1 tvg-id="MonumentalTV.py@SD" tvg-logo="https://i.imgur.com/kEcOYML.png" http-referrer="https://www.monumental.com.py/" group-title="General",Monumental TV
+#EXTVLCOPT:http-referrer=https://www.monumental.com.py/
+https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion
 #EXTINF:-1 tvg-id="MoraNetTV.hu@SD" tvg-logo="https://i.imgur.com/yT0RmKi.png" group-title="General",Móra-Net TV (576p)
 https://stream.moranettv.hu/live/index.m3u8
 #EXTINF:-1 tvg-id="MorroTV.do@SD" tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3759-294x165-FFFFFF.jpg" group-title="General",MorroTV (720p) [Not 24/7]
@@ -3044,6 +3056,12 @@ https://panel.host-live.com:19360/20004/20004.m3u8
 https://stream.nmih.hu:4102/live.m3u8
 #EXTINF:-1 tvg-id="ParadiseTV.gm@SD" tvg-logo="https://i.imgur.com/0aT45vk.png" group-title="General",Paradise TV
 https://dvrfl06.bozztv.com/astv-ptvgambia/index.m3u8
+#EXTINF:-1 tvg-id="ParaguayTV.py@SD" tvg-logo="https://i.imgur.com/fkK7i8g.png" http-referrer="https://www.paraguaytv.gov.py/" group-title="General",Paraguay TV (720p)
+#EXTVLCOPT:http-referrer=https://www.paraguaytv.gov.py/
+https://stream.paraguaytv.gov.py/memfs/bbe36fed-9b49-4d1d-adaa-4bd6d1b2e386.m3u8
+#EXTINF:-1 tvg-id="Paravision.py@SD" tvg-logo="https://i.imgur.com/yd9Dw2G.png" http-referrer="https://www.paravision.com.py/" group-title="General",Paravision
+#EXTVLCOPT:http-referrer=https://www.paravision.com.py/
+http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/120.m3u8
 #EXTINF:-1 tvg-id="ParsTV.us@SD" tvg-logo="https://i.imgur.com/RQ5DzEE.png" group-title="General",Pars TV
 https://parshls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="PATLaPaz.bo@SD" tvg-logo="https://i.imgur.com/4A7R2Jt.png" group-title="General",PAT La Paz
@@ -3084,7 +3102,7 @@ https://stream.polar.cz/polar2/polarlive2-1/playlist.m3u8
 #EXTINF:-1 tvg-id="PolarTV.cz@SD" tvg-logo="https://i.imgur.com/pTJHIX1.png" group-title="General",Polar TV (1080p)
 https://stream.polar.cz/polar/polarlive-1/playlist.m3u8
 #EXTINF:-1 tvg-id="Polsat.pl@SD" tvg-logo="https://i.imgur.com/xff6zGN.png" group-title="General",Polsat (1080p) [Geo-blocked]
-http://cdn-s-lb2.pluscdn.pl/ch/1502600/308/dash/20a18c30/live.mpd
+https://cdn-s-playnow-live.pluscdn.pl/ch/1502600/308/dash/20a18c30/live.mpd
 #EXTINF:-1 tvg-id="PortalDigitalTV.do@HD" tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3664-294x165-FFFFFF.jpg" group-title="General",Portal Digital TV (720p) [Not 24/7]
 https://mlb.essastream.com:8081/portaldigital/playlist.m3u8
 #EXTINF:-1 tvg-id="PortoCanal.pt@SD" tvg-logo="https://i.imgur.com/DwziwMY.png" group-title="General",Porto Canal (720p)
@@ -3763,6 +3781,9 @@ https://streaming.grupomediosdelnorte.com:19360/telecomerciotv/telecomerciotv.m3
 https://streaming.grupomediosdelnorte.com:19360/telecontacto/telecontacto.m3u8
 #EXTINF:-1 tvg-id="Telefuturo.do@SD" tvg-logo="https://i.imgur.com/QpnctoU.png" group-title="General",Telefuturo (480p) [Not 24/7]
 http://190.122.104.210:5080/LiveApp/streams/tfuturo.m3u8
+#EXTINF:-1 tvg-id="Telefuturo.py@SD" tvg-logo="https://i.imgur.com/6lVrFvb.png" http-referrer="https://www.telefuturo.com.py" group-title="General",Telefuturo (1080p)
+#EXTVLCOPT:http-referrer=https://www.telefuturo.com.py
+https://copacogen.desdeparaguay.net/telefuturo/telefuturo_py_alta/media.m3u8?admin=tvaccion
 #EXTINF:-1 tvg-id="TeleGohelle.fr@SD" tvg-logo="https://i.imgur.com/Oa3Pwbf.png" group-title="General",TéléGohelle
 https://videas.agglo-lenslievin.fr/index.m3u8
 #EXTINF:-1 tvg-id="Teleimpacto.do@SD" tvg-logo="https://i.imgur.com/dBEysOV.png" group-title="General",Teleimpacto (720p) [Not 24/7]
@@ -4117,8 +4138,6 @@ https://stream.oursnetworktv.com/latin/tvguanajuato/playlist.m3u8
 https://host.streamingnation.live/p/3467/live/tvhigueylive.m3u8
 #EXTINF:-1 tvg-id="TVHispanic.us@SD" tvg-logo="https://i.imgur.com/eThe0io.png" group-title="General",TV Hispanic [Not 24/7]
 https://livetv.305streamhd.com:3504/live/tvhispaniclive.m3u8
-#EXTINF:-1 tvg-id="TelewizjaImperium.pl@SD" tvg-logo="https://i.ibb.co/k2jQkHq/Cropped-mperiumczarne-768x243-1-1.png" group-title="General",TV Imperium (1080p) [Not 24/7]
-https://91-193-208-10.eimperium.pl/TVIMPERIUM/index.m3u8
 #EXTINF:-1 tvg-id="TVIndependencia.mx@SD" tvg-logo="https://i.imgur.com/kuyQvUP.png" group-title="General",TV Independencia (1080p)
 https://stream.oursnetworktv.com/latin/tvindependencia/playlist.m3u8
 #EXTINF:-1 tvg-id="TVJurmala.lv@SD" tvg-logo="https://i.imgur.com/tQHkHD0.png" group-title="General",TV Jūrmala (1080p)
