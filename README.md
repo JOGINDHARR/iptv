@@ -73,6 +73,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Bbo | [`https://jogindharr.github.io/iptv/languages/bbo.m3u`](https://jogindharr.github.io/iptv/languages/bbo.m3u) |
 | Bel | [`https://jogindharr.github.io/iptv/languages/bel.m3u`](https://jogindharr.github.io/iptv/languages/bel.m3u) |
 | Ben | [`https://jogindharr.github.io/iptv/languages/ben.m3u`](https://jogindharr.github.io/iptv/languages/ben.m3u) |
+| Bgc | [`https://jogindharr.github.io/iptv/languages/bgc.m3u`](https://jogindharr.github.io/iptv/languages/bgc.m3u) |
 | Bho | [`https://jogindharr.github.io/iptv/languages/bho.m3u`](https://jogindharr.github.io/iptv/languages/bho.m3u) |
 | Bib | [`https://jogindharr.github.io/iptv/languages/bib.m3u`](https://jogindharr.github.io/iptv/languages/bib.m3u) |
 | Bod | [`https://jogindharr.github.io/iptv/languages/bod.m3u`](https://jogindharr.github.io/iptv/languages/bod.m3u) |
