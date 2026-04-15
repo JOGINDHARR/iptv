@@ -2268,6 +2268,8 @@ https://cnn.hostlagarto.com/lagutv/playlist.m3u8
 https://dlttx48mxf9m3.cloudfront.net/vod_clients/lakewood/live/ch1/video.m3u8
 #EXTINF:-1 tvg-id="LamDongTV.vn@SD" tvg-logo="https://i.imgur.com/lSMoGlv.png" group-title="General",Lâm Đồng TV (480p)
 http://118.107.85.5:1935/live/smil:LTV.smil/chunklist.m3u8
+#EXTINF:-1 tvg-id="LanaTV.lb@SD" tvg-logo="https://i.imgur.com/xPoycVY.png" group-title="General",Lana TV (576p)
+https://cdn.streamlane.tv/hls/ltv/master.m3u8
 #EXTINF:-1 tvg-id="LancelotTV.es@SD" tvg-logo="https://i.imgur.com/RlzVIJP.png" group-title="General",Lancelot TV (404p)
 https://5c0956165db0b.streamlock.net:8090/directo/_definst_/lancelot.television/master.m3u8
 #EXTINF:-1 tvg-id="LandleTV.at@SD" tvg-logo="https://i.imgur.com/omLVQ4r.png" group-title="General",Ländle TV (1080p) [Not 24/7]
@@ -2372,8 +2374,6 @@ https://livestream.telvue.com/lexmedia1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lex
 https://stream-live.lrt.lt/lituanica/master.m3u8
 #EXTINF:-1 tvg-id="LRTTV.lt@SD" tvg-logo="https://i.imgur.com/FL2ZuGC.png" group-title="General",LRT TV (1080p) [Geo-blocked]
 https://stream-syncwords.lrt.lt/out/v1/channel-group-lrt-portal-prod-01/channel-lrt-portal-prod-01/endpoint-lrt-portal-prod-01/index.m3u8
-#EXTINF:-1 tvg-id="LanaTV.lb@SD" tvg-logo="https://i.imgur.com/xPoycVY.png" group-title="General",LTV (360p)
-https://p-ltv.akamaized.net/ltv/ltv.m3u8
 #EXTINF:-1 tvg-id="LTV.hn@SD" tvg-logo="https://i.imgur.com/KBYUOcP.png" group-title="General",LTV (720p) [Not 24/7]
 https://5e85d90130e77.streamlock.net/6022/6022/playlist.m3u8
 #EXTINF:-1 tvg-id="LunaTV.it@SD" tvg-logo="https://www.lyngsat.com/logo/tv/ll/luna-tv-it.png" group-title="General",Luna TV
@@ -3677,6 +3677,9 @@ https://ss2.tvrdomi.com:1936/eradiofonicas/eradiofonicas/playlist.m3u8
 https://livetv.305streamhd.com:3111/live/suramtvlive.m3u8
 #EXTINF:-1 tvg-id="SuspilneKrym.ua@SD" tvg-logo="https://i.imgur.com/m7znCes.png" group-title="General",Suspilne. Krym (1080p) [Geo-blocked]
 https://ext.cdn.nashnet.tv/228.0.0.71/index.m3u8
+#EXTINF:-1 tvg-id="SusunTV.my@HD" tvg-logo="https://s3cdn.panda-os.com/10966/upload/InShot_20251029_072140835.png" http-referrer="https://susuntv.bamboo-cloud.com/" group-title="General",Susun TV (1080p)
+#EXTVLCOPT:http-referrer=https://susuntv.bamboo-cloud.com/
+https://vodcdn.bamboo-cloud.com/livehls/6901607706304423c1685213/master.m3u8
 #EXTINF:-1 tvg-id="SutelTV.mk@SD" tvg-logo="https://i.imgur.com/hk3lhuF.png" group-title="General",Sutel TV [Geo-blocked]
 https://vipottbpkstream.vip.hr/Content/onevip-hls/Live/Channel(Shutel)/index.m3u8
 #EXTINF:-1 tvg-id="SyrosTV1.gr@SD" tvg-logo="https://i.imgur.com/arQe5qS.png" group-title="General",Syros TV1 (720p)

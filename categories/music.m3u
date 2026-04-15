@@ -128,6 +128,8 @@ http://31.148.48.15/Bridge_TV_HD/index.m3u8
 http://31.148.48.15/Bridge_TV_Dance/index.m3u8
 #EXTINF:-1 tvg-id="BTATV.ve@SD" tvg-logo="https://i.imgur.com/vygOosC.png" group-title="Music",BTA TV (720p)
 https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8
+#EXTINF:-1 tvg-id="BTBMusic.pl@HD" tvg-logo="https://btb.j00r.us/images/logo_BTBMusic.webp" group-title="Music",BTB Music (1080p)
+https://panel.btb.j00r.us/memfs/ebaffae6-0086-49d7-843d-57f2c561de86.m3u8
 #EXTINF:-1 tvg-id="BusuiocTV.md@SD" tvg-logo="https://i.imgur.com/CQtfBPu.png" group-title="Music",Busuioc TV (540p) [Not 24/7]
 https://busuioctv.iforward.eu/hls/busuioc.m3u8
 #EXTINF:-1 tvg-id="CadenaElite.es@SD" tvg-logo="https://i.imgur.com/3yeGDTP.png" group-title="Music",Cadena Elite (720p) [Not 24/7]
@@ -899,6 +901,8 @@ https://cdn-4.pishow.tv/live/1143/master.m3u8
 http://103.213.31.109:90/SangeetBhojpuri/playlist.m3u8
 #EXTINF:-1 tvg-id="SangeetMarathi.in@SD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SANGEET_MARATHI/images/LOGO_HD/image.png" group-title="Music",Sangeet Marathi (720p)
 https://cdn-3.pishow.tv/live/1229/master.m3u8
+#EXTINF:-1 tvg-id="ShemarooFilmiGaane.in@HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/channel/0d5b07555b2d4415aa9f145273095ed7.png" group-title="Movies;Music",Shemaroo Filmi Gaane (1080p)
+http://103.213.31.109:90/ShemarooFilmiGaane/playlist.m3u8
 #EXTINF:-1 tvg-id="SiembraTV.do@SD" tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3226-294x165-FFFFFF.jpg" group-title="Music",Siembra TV (720p)
 https://streamunoapp.com:3809/live/siembratvlive.m3u8
 #EXTINF:-1 tvg-id="SkyFolkTV.mk@SD" tvg-logo="https://i.imgur.com/ya5xpUL.png" group-title="Music",Sky Folk TV (720p) [Not 24/7]

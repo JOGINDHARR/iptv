@@ -434,6 +434,9 @@ https://jmp2.uk/plu-65c4960d11ced7000812c433.m3u8
 https://live20.bozztv.com/akamaissh101/ssh101/gextvaccess/playlist.m3u8
 #EXTINF:-1 tvg-id="GiTelevision.do@SD" tvg-logo="https://i.imgur.com/br9TNG8.png" group-title="Entertainment",Gi Television (720p) [Not 24/7]
 https://canal.gitelevisionserver.com/live/DIEEFIh506fL8huspvl0f0c2PZF3/index.m3u8
+#EXTINF:-1 tvg-id="GikTVMX.mx@SD" tvg-logo="https://i.imgur.com/Gwz78jZ.png" http-referrer="https://giktv.com" group-title="Animation;Culture;Entertainment",GikTVMX (720p)
+#EXTVLCOPT:http-referrer=https://giktv.com
+https://pistream.ddns.net/hls/stream.m3u8
 #EXTINF:-1 tvg-id="GirasolTV.hn@SD" tvg-logo="https://i.imgur.com/2t7A2yg.png" group-title="Entertainment",Girasol TV (1080p)
 https://59d39900ebfb8.streamlock.net/girasoltv/girasoltv/playlist.m3u8
 #EXTINF:-1 tvg-id="Girovisual.cl@SD" tvg-logo="https://i.imgur.com/BYBMuhf.png" group-title="Entertainment",Girovisual (720p)
@@ -756,7 +759,7 @@ https://ncdn.telewebion.ir/namayesh/live/playlist.m3u8
 https://ncdn.telewebion.ir/nasim/live/playlist.m3u8
 #EXTINF:-1 tvg-id="NazalisHDTV.cg@SD" tvg-logo="https://i.imgur.com/SrdRtqn.png" group-title="Entertainment",Nazali's HDTV (1080p)
 http://194.163.135.238:5080/WebRTCApp/streams/590264631485484547459082.m3u8
-#EXTINF:-1 tvg-id="EpicBharat.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s158303_ld_h15_aa.png?lock=720x540" group-title="Entertainment",Nazara (1080p)
+#EXTINF:-1 tvg-id="EpicBharat.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG0032BW6T.png?lock=720x540" group-title="Entertainment",Nazara (1080p)
 https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8
 #EXTINF:-1 tvg-id="NBC3.na@SD" tvg-logo="https://i.imgur.com/7j8Km6e.png" group-title="Entertainment",NBC 3 (480p)
 https://hls2.nbcplus.na/hls/high_nbc3.m3u8

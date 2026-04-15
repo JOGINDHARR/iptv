@@ -304,7 +304,7 @@ https://connection3-ent-nz.samsung.wurl.tv/playlist.m3u8
 https://cdn-6.pishow.tv/live/10007/master.m3u8
 #EXTINF:-1 tvg-id="ManoranjanGrand.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s143302_ld_h15_aa.png?lock=720x540" group-title="Movies",Manoranjan Grand (720p)
 https://cdn-1.pishow.tv/live/1011/master.m3u8
-#EXTINF:-1 tvg-id="ManoranjanMovies.in@SD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_MANORANJAN_MOVIES/images/LOGO_HD/image.png" group-title="Movies",Manoranjan Movies (720p)
+#EXTINF:-1 tvg-id="ManoranjanMovies.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s143303_ld_h15_aa.png?lock=720x540" group-title="Movies",Manoranjan Movies (720p)
 http://103.213.31.109:90/ManoranjanMovies/playlist.m3u8
 #EXTINF:-1 tvg-id="MaverickBlackCinema.us@SD" tvg-logo="https://images.fubo.tv/station_logos/maverick_black_cinema_c.png" group-title="Movies",Maverick Black Cinema (1080p)
 https://maverick-maverick-black-cinema-3-us.roku.wurl.tv/playlist.m3u8
@@ -586,8 +586,8 @@ http://178.33.11.6:8696/live/rtshshqip/playlist.m3u8
 https://run-rt-uh-roku.otteravision.com/run/rt_uh/rt_uh.m3u8
 #EXTINF:-1 tvg-id="ServusTV.at@SD" tvg-logo="https://i.imgur.com/6W637Gn.png" group-title="Movies",ServusTV (1080p) [Geo-blocked]
 https://stv-live.akamaized.net/hls/live/2031011/lingeoSTVATwebPri/master.m3u8
-#EXTINF:-1 tvg-id="ServusTV.at@HD" tvg-logo="https://i.imgur.com/6W637Gn.png" group-title="Movies",ServusTV HD (1080p) [Geo-Blocked]
-https://viamotionhsi.netplus.ch/live/eds/servustvhd/browser-HLS8/servustvhd.m3u8
+#EXTINF:-1 tvg-id="ShemarooFilmiGaane.in@HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/channel/0d5b07555b2d4415aa9f145273095ed7.png" group-title="Movies;Music",Shemaroo Filmi Gaane (1080p)
+http://103.213.31.109:90/ShemarooFilmiGaane/playlist.m3u8
 #EXTINF:-1 tvg-id="ShemarooJosh.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG00297P3E.png?lock=720x540" group-title="Movies",Shemaroo Josh (720p)
 https://airtelapp.shemaroo.com/shemarooChumbakTV/smil:shemarooChumbakTVadp.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="ShubhCinemaTV.in@SD" tvg-logo="https://i.imgur.com/RQhorAG.png" group-title="Movies",Shubh Cinema TV (720p)
