@@ -2889,6 +2889,8 @@ https://freespeech.akamaized.net/hls/live/2024574/live4/playlist.m3u8
 https://aprende-usea.streaming.media.azure.net/9317ea3f-03a0-4266-9292-ac97a0e41c4d/output-20230609-123537-manifest.ism/manifest(format=m3u8-cmaf).m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Ink Master
 https://jmp2.uk/plu-655f2d713944b60008bc7e90.m3u8
+#EXTINF:-1 tvg-id="InsaytTV.ru@4K" tvg-logo="https://i.imgur.com/slLuRel.png" group-title="Undefined",Insayt TV (2160p)
+https://stream8.cinerama.uz/1416/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Inside Outside (720p)
 https://all3media-international-insideoutside-1-au.samsung.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Inside Outside (720p)
@@ -6197,6 +6199,8 @@ http://122.248.43.242:1935/SIMPANG5TV/_definst_/myStream/playlist.m3u8
 https://jmp2.uk/plu-604bdf4e6d0abc0007ba77ad.m3u8
 #EXTINF:-1 tvg-id="SindhTV.pk@SD" tvg-logo="https://i.imgur.com/izpeOsx.png" group-title="Undefined",Sindh TV (1080p)
 http://103.250.28.74:8000/play/a00u/index.m3u8
+#EXTINF:-1 tvg-id="SirasaTV.lk@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Sirasa_TV_Logo.png/500px-Sirasa_TV_Logo.png" group-title="Undefined",Sirasa TV (720p)
+https://mini.allinonereborn.fun/tata.php?id=11614
 #EXTINF:-1 tvg-id="SirisTV.nl@SD" tvg-logo="https://i.imgur.com/4qKe18X.png" group-title="Undefined",Siris TV (720p)
 https://cdn.streammy.events/siris/playout/playlist.m3u8
 #EXTINF:-1 tvg-id="SistemaMichoacanodeTV.mx@SD" tvg-logo="https://i.imgur.com/7MXF4Fd.png" group-title="Undefined",Sistema Michoacano de TV (1080p) [Not 24/7]
@@ -6559,6 +6563,8 @@ https://jmp2.uk/plu-693bf37b75432d022c85ef01.m3u8
 https://jmp2.uk/plu-620bfa7df72827000703ddb1.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Starke Frauen (1080p)
 https://mainstreamstarkefrauen-rakuten.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="StarsTV.pl@SD" tvg-logo="https://i.imgur.com/NdITPCk.png" group-title="Undefined",Stars TV (1080p)
+https://vs2120.vcdn.biz/cb9c5a2e0814e884ec2bb7b2908399db_megogo/live/hls/b/700_2490_4000/u_sid/0/o/157933561/rsid/74533743-6d06-4171-87f2-0644f854604d/u_uid/0/u_vod/0/u_device/cms_html5/u_devicekey/_site/lip/37.109.163.151*asn/u_srvc/81255/u_did/web_Q7VE67mYqQtAaknvbeN2NwJ1P2rWIdnv/type.live/chunklist-sid8102720585553602615-b4000000.m3u8
 #EXTINF:-1 tvg-id="Starz.us@East" tvg-logo="https://i.imgur.com/N7oSm4d.png" group-title="Undefined",Starz (1080p)
 http://23.237.104.106:8080/USA_STARZ/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",StashTV Black Stories (720p) [Geo-blocked]
@@ -7651,6 +7657,8 @@ https://jmp2.uk/plu-62e010e6cd663f0007e57dc8.m3u8
 https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8
 #EXTINF:-1 tvg-id="TVDen.tr@SD" tvg-logo="https://i.imgur.com/Uhg95Ze.png" group-title="Undefined",TV Den (576p) [Not 24/7]
 http://canli.tvden.com.tr/hls/live.m3u8
+#EXTINF:-1 tvg-id="TVDerana.lk@SD" tvg-logo="https://i.imgur.com/vToOI2s.png" group-title="Undefined",TV Derana (720p)
+https://mini.allinonereborn.fun/tata.php?id=11607
 #EXTINF:-1 tvg-id="TVDielli.xk@SD" tvg-logo="https://i.imgur.com/kLl3ar5.png" group-title="Undefined",TV Dielli (720p) [Not 24/7]
 http://stream.tvdielli.com:8081/dielli/index.m3u8
 #EXTINF:-1 tvg-id="TVDK.sk@SD" tvg-logo="https://i.imgur.com/qTOnPXe.png" group-title="Undefined",TV DK (486p) [Not 24/7]
@@ -7851,6 +7859,8 @@ http://202.80.222.20/cdn/iptv/Tvod/001/channel2000018/1024.m3u8
 https://ec06-krk3.cache.orange.pl/dai4/org1/vb/104/tvp1hd/index.m3u8
 #EXTINF:-1 tvg-id="TVP2.pl@SD" tvg-logo="https://i.imgur.com/XxCc32B.png" group-title="Undefined",TVP2 (1080p)
 https://estreams.tv.nej.cz/dash/CH_TVP2_Portable.ism/playlist.mpd
+#EXTINF:-1 tvg-id="TVPHD.pl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TVP_HD_logo.svg/960px-TVP_HD_logo.svg.png" group-title="Undefined",TVP HD (1080p)
+http://78.130.250.2:8023/play/a03a/index.m3u8
 #EXTINF:-1 tvg-id="TVPInfo.pl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/28/TVP_info_%282024%29.png" group-title="Undefined",TVP Info (1080p)
 http://78.130.250.2:8023/play/a03b/index.m3u8
 #EXTINF:-1 tvg-id="TVPKultura.pl@SD" tvg-logo="https://i.imgur.com/JU858Es.png" group-title="Undefined",TVP Kultura (1080p)
@@ -8053,6 +8063,8 @@ https://cloud.tvomix.com/URBANMIX/index.m3u8
 https://live.artidijitalmedya.com/artidijital_urfanatiktv/urfanatiktv/playlist.m3u8
 #EXTINF:-1 tvg-id="UStad.nl@SD" tvg-logo="https://i.imgur.com/9F8ieEz.png" group-title="Undefined",UStad (1080p)
 http://media.rtvutrecht.nl/live/rtvutrecht/ustad/index.m3u8
+#EXTINF:-1 tvg-id="UtsavBharat.uk@SD" tvg-logo="https://i.imgur.com/IQ2n0WY.png" group-title="Undefined",Utsav Bharat (576p)
+https://mini.allinonereborn.fun/tata.php?id=11779
 #EXTINF:-1 tvg-id="UTV.cl@SD" tvg-logo="https://i.imgur.com/ZJNSpfZ.png" group-title="Undefined",UTV (720p)
 https://v2.tustreaming.cl/utv/index.m3u8
 #EXTINF:-1 tvg-id="UTV.iq@SD" tvg-logo="https://i.imgur.com/9qFHjnu.png" group-title="Undefined",UTV (1080p)
@@ -8779,6 +8791,8 @@ https://jmp2.uk/plu-66f55cf2483d460008f68746.m3u8
 https://dq126dsoud56d.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Zoomer-DistroTV/316.m3u8?ads.vf=DoYjaTaR5sC
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Zoomer TV (1080p)
 https://d3p8ecnk6t4t73.cloudfront.net/scheduler/scheduleMaster/316.m3u8
+#EXTINF:-1 tvg-id="Zoopark.ru@SD" tvg-logo="https://i.imgur.com/IO5jegK.png" group-title="Undefined",Zoopark (576i)
+https://stream8.cinerama.uz/1417/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="Arkhyz24.ru@SD" tvg-logo="https://i.imgur.com/blAtdkJ.png" group-title="Undefined",Архыз 24 (1080p)
 https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8
 #EXTINF:-1 tvg-id="AstrahanRuTV.ru@SD" tvg-logo="https://i.imgur.com/w4ys6zm.png" group-title="Undefined",Астрахань.Ru TV (480p)
