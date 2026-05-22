@@ -50,7 +50,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 ### Languages
 | Name | M3U Link |
 | --- | --- |
-| Aar | [`https://jogindharr.github.io/iptv/languages/aar.m3u`](https://jogindharr.github.io/iptv/languages/aar.m3u) |
 | Acf | [`https://jogindharr.github.io/iptv/languages/acf.m3u`](https://jogindharr.github.io/iptv/languages/acf.m3u) |
 | Ach | [`https://jogindharr.github.io/iptv/languages/ach.m3u`](https://jogindharr.github.io/iptv/languages/ach.m3u) |
 | Adh | [`https://jogindharr.github.io/iptv/languages/adh.m3u`](https://jogindharr.github.io/iptv/languages/adh.m3u) |
