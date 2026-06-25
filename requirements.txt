@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+slowapi
+python-multipart
+curl-cffi

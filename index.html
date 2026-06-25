@@ -1,2272 +1,762 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPTV Playlist Bot</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #121212; color: #e0e0e0; }
-        .card { background-color: #1e1e1e; border: 1px solid #333; margin-bottom: 20px; }
-        .btn-primary { background-color: #bb86fc; border: none; color: #000; font-weight: bold; }
-        .btn-primary:hover { background-color: #9965f4; }
-        code { color: #03dac6; background-color: #2c2c2c; padding: 2px 5px; border-radius: 4px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoShopify API — Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & base ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#060910;
+  --bg2:#0c1120;
+  --bg3:#111827;
+  --glass:rgba(255,255,255,.04);
+  --glass-b:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.08);
+  --border-h:rgba(255,255,255,.16);
+  --accent:#6366f1;
+  --accent2:#8b5cf6;
+  --gold:#f59e0b;
+  --gold2:#fbbf24;
+  --green:#10b981;
+  --red:#ef4444;
+  --yellow:#f59e0b;
+  --blue:#3b82f6;
+  --text1:#f1f5f9;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 24px 64px rgba(0,0,0,.5);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text1);line-height:1.6;min-height:100vh;overflow-x:hidden}
+::selection{background:rgba(99,102,241,.3);color:#fff}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border-h);border-radius:99px}
+
+/* ── Animated background ──────────────────────────────────── */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%,rgba(99,102,241,.12) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,rgba(139,92,246,.10) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 30% at 50% 50%,rgba(245,158,11,.05) 0%,transparent 70%);
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(6,9,16,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 1.5rem;
+}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text1)}
+.logo span{background:linear-gradient(135deg,var(--gold),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.9)}}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.85rem;font-weight:500;padding:.4rem .75rem;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--text1);background:var(--glass-b)}
+.nav-pro{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff !important;font-size:.75rem !important;font-weight:700 !important;letter-spacing:.05em;border-radius:6px !important;padding:.35rem .8rem !important}
+.nav-pro:hover{opacity:.9;background:linear-gradient(135deg,var(--accent),var(--accent2)) !important}
+@media(max-width:640px){.nav-links li:not(:last-child){display:none}}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero{
+  position:relative;z-index:1;
+  padding:9rem 1.5rem 5rem;text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);
+  color:var(--accent);border-radius:99px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+  padding:.35rem 1rem;margin-bottom:2rem;
+}
+.hero-tag svg{width:14px;height:14px}
+.hero h1{
+  font-size:clamp(2.2rem,6vw,4rem);font-weight:900;
+  letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem;
+  background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--gold),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:520px;margin:0 auto 2.5rem}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:3rem}
+.pill{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--glass);border:1px solid var(--border);
+  border-radius:99px;padding:.4rem .9rem;
+  font-size:.78rem;font-weight:600;color:var(--text2);
+  transition:all .2s;
+}
+.pill:hover{border-color:var(--border-h);color:var(--text1)}
+.pill.g{color:var(--green)}
+.pill.a{color:var(--accent)}
+.pill.y{color:var(--gold)}
+.hero-url{
+  display:inline-flex;align-items:center;gap:.75rem;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:10px;padding:.75rem 1.25rem;
+  font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--text2);
+  cursor:pointer;transition:all .2s;max-width:100%;
+}
+.hero-url:hover{border-color:var(--accent);color:var(--text1)}
+.hero-url .url-text{color:var(--gold);word-break:break-all}
+.copy-icon{flex-shrink:0;opacity:.5;transition:opacity .2s}
+.hero-url:hover .copy-icon{opacity:1}
+
+/* ── Sections ─────────────────────────────────────────────── */
+section{position:relative;z-index:1;padding:5rem 1.5rem;border-bottom:1px solid var(--border)}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:.75rem;
+}
+.section-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+.section-sub{font-size:1rem;color:var(--text2);margin-bottom:3rem;max-width:520px}
+
+/* ── Stats bar ────────────────────────────────────────────── */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border);border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border);margin-bottom:5rem;
+}
+@media(min-width:640px){.stats-bar{grid-template-columns:repeat(4,1fr)}}
+.stat{
+  background:var(--bg2);padding:1.75rem 1.25rem;text-align:center;
+  transition:background .2s;
+}
+.stat:hover{background:var(--bg3)}
+.stat-val{font-size:2rem;font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:.35rem}
+.stat-val.g{color:var(--green)}
+.stat-val.a{color:var(--accent)}
+.stat-val.y{color:var(--gold)}
+.stat-val.b{color:var(--blue)}
+.stat-label{font-size:.78rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.cards{display:grid;gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+@media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.cards.three{grid-template-columns:1fr 1fr 1fr}}
+@media(min-width:900px){.cards.four{grid-template-columns:1fr 1fr 1fr 1fr}}
+.card{background:var(--bg2);padding:1.75rem;transition:background .2s}
+.card:hover{background:var(--bg3)}
+.card-icon{font-size:1.5rem;margin-bottom:.9rem}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.card p{font-size:.875rem;color:var(--text2);line-height:1.55}
+.card.green .card-icon{filter:hue-rotate(120deg)}
+.card.red .card-icon{filter:hue-rotate(300deg)}
+
+/* ── Mode comparison ──────────────────────────────────────── */
+.mode-grid{display:grid;gap:1.25rem}
+@media(min-width:768px){.mode-grid{grid-template-columns:1fr 1fr}}
+.mode-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;
+  position:relative;overflow:hidden;transition:border-color .2s;
+}
+.mode-card:hover{border-color:var(--border-h)}
+.mode-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mode-card.low::before{background:linear-gradient(90deg,var(--green),var(--blue))}
+.mode-card.high::before{background:linear-gradient(90deg,var(--gold),var(--red))}
+.mode-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.mode-badge{
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:6px;
+}
+.low .mode-badge{background:rgba(16,185,129,.15);color:var(--green)}
+.high .mode-badge{background:rgba(245,158,11,.15);color:var(--gold)}
+.mode-title{font-size:1.15rem;font-weight:800}
+.mode-rows{display:grid;gap:.75rem}
+.mode-row{display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem}
+.mode-row-icon{width:20px;flex-shrink:0;text-align:center;margin-top:.1rem}
+.mode-row-key{color:var(--text3);min-width:90px;flex-shrink:0}
+.mode-row-val{color:var(--text1);font-weight:500}
+
+/* ── Endpoint ─────────────────────────────────────────────── */
+.endpoint{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-bottom:1.25rem;
+  transition:border-color .2s;
+}
+.endpoint:hover{border-color:var(--border-h)}
+.endpoint-head{
+  display:flex;align-items:center;gap:.75rem;
+  padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.75rem;
+}
+.method{
+  font-size:.72rem;font-weight:800;letter-spacing:.08em;
+  background:rgba(16,185,129,.15);color:var(--green);
+  padding:.3rem .65rem;border-radius:5px;flex-shrink:0;
+}
+.ep-path{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--gold);font-weight:600}
+.ep-desc{font-size:.85rem;color:var(--text2);margin-left:auto}
+.endpoint-body{padding:1.5rem}
+
+/* ── Params table ─────────────────────────────────────────── */
+.table-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:480px}
+thead th{
+  background:rgba(255,255,255,.03);
+  padding:.85rem 1rem;text-align:left;
+  color:var(--text3);font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);
+}
+tbody td{
+  padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);
+  color:var(--text2);vertical-align:top;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--glass)}
+.td-name{font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:600;font-size:.82rem}
+.badge-r{background:rgba(239,68,68,.15);color:var(--red);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+.badge-o{background:rgba(99,102,241,.15);color:var(--accent);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+td code{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text1);background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:4px}
+
+/* ── Code blocks ──────────────────────────────────────────── */
+.code-wrap{position:relative;margin-top:1rem}
+.code-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text3);margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem;
+}
+.code-label::after{content:'';flex:1;height:1px;background:var(--border)}
+pre{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:1.25rem;
+  font-family:'JetBrains Mono',monospace;font-size:.8rem;
+  color:var(--text2);line-height:1.65;overflow-x:auto;
+  position:relative;
+}
+.copy-btn{
+  position:absolute;top:.75rem;right:.75rem;
+  background:var(--glass-b);border:1px solid var(--border);
+  color:var(--text2);font-size:.72rem;font-weight:600;
+  padding:.3rem .65rem;border-radius:5px;cursor:pointer;
+  transition:all .2s;display:flex;align-items:center;gap:.35rem;
+}
+.copy-btn:hover{background:var(--border-h);color:var(--text1)}
+.copy-btn.copied{color:var(--green);border-color:rgba(16,185,129,.3)}
+.str{color:#a3e635}.num{color:#fb923c}.kw{color:#94a3b8}.key{color:#7dd3fc}.bool{color:#c084fc}
+
+/* ── Response status badges ───────────────────────────────── */
+.status-grid{display:grid;gap:.75rem;grid-template-columns:1fr 1fr}
+@media(min-width:640px){.status-grid{grid-template-columns:repeat(4,1fr)}}
+.status-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:1.25rem;text-align:center;
+  transition:all .2s;
+}
+.status-card:hover{border-color:var(--border-h);transform:translateY(-2px)}
+.status-dot{width:10px;height:10px;border-radius:50%;margin:0 auto .75rem}
+.status-card.charged .status-dot{background:var(--green);box-shadow:0 0 10px rgba(16,185,129,.5)}
+.status-card.approved .status-dot{background:var(--blue);box-shadow:0 0 10px rgba(59,130,246,.5)}
+.status-card.declined .status-dot{background:var(--red);box-shadow:0 0 10px rgba(239,68,68,.5)}
+.status-card.error .status-dot{background:var(--yellow);box-shadow:0 0 10px rgba(245,158,11,.5)}
+.status-name{font-size:.85rem;font-weight:800;letter-spacing:.04em;margin-bottom:.35rem}
+.status-card.charged .status-name{color:var(--green)}
+.status-card.approved .status-name{color:var(--blue)}
+.status-card.declined .status-name{color:var(--red)}
+.status-card.error .status-name{color:var(--yellow)}
+.status-desc{font-size:.78rem;color:var(--text3)}
+
+/* ── Live Tester ──────────────────────────────────────────── */
+.tester{
+  background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius);
+  overflow:hidden;position:relative;
+}
+.tester::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));
+}
+.tester-head{padding:1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem}
+.tester-head h3{font-size:1rem;font-weight:700}
+.live-badge{
+  background:rgba(16,185,129,.15);color:var(--green);
+  font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.25rem .6rem;border-radius:99px;display:flex;align-items:center;gap:.4rem;
+}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+.tester-body{padding:1.5rem}
+.form-grid{display:grid;gap:1rem}
+@media(min-width:640px){.form-grid{grid-template-columns:1fr 1fr}}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+label{font-size:.8rem;font-weight:600;color:var(--text2)}
+label span{color:var(--red);margin-left:.2rem}
+input,select{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:.7rem .9rem;
+  color:var(--text1);font-size:.9rem;font-family:'Inter',sans-serif;
+  width:100%;transition:all .2s;
+}
+input:focus,select:focus{outline:none;border-color:var(--accent);background:rgba(99,102,241,.05)}
+input::placeholder{color:var(--text3)}
+select option{background:var(--bg2)}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.toggle-label{font-size:.85rem;font-weight:600;color:var(--text2)}
+.toggle-sub{font-size:.75rem;color:var(--text3);margin-top:.15rem}
+.toggle{position:relative;width:44px;height:24px;flex-shrink:0;cursor:pointer}
+.toggle input{opacity:0;width:0;height:0}
+.toggle-slider{
+  position:absolute;inset:0;background:var(--bg3);border-radius:99px;
+  border:1px solid var(--border);transition:all .3s;
+}
+.toggle-slider::before{
+  content:'';position:absolute;left:3px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;border-radius:50%;background:var(--text3);transition:all .3s;
+}
+input:checked+.toggle-slider{background:rgba(99,102,241,.3);border-color:var(--accent)}
+input:checked+.toggle-slider::before{transform:translate(20px,-50%);background:var(--accent)}
+.btn{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;border:none;border-radius:var(--radius-sm);
+  padding:.85rem 2rem;font-size:.95rem;font-weight:700;
+  cursor:pointer;transition:all .3s;width:100%;
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:'Inter',sans-serif;margin-top:.25rem;
+  box-shadow:0 8px 24px rgba(99,102,241,.25);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(99,102,241,.4)}
+.btn:active{transform:translateY(0)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.result-wrap{margin-top:1.5rem;display:none}
+.result-wrap.show{display:block}
+.result-status{
+  display:flex;align-items:center;gap:.75rem;
+  padding:1rem 1.25rem;border-radius:var(--radius-sm);margin-bottom:1rem;
+  font-size:.9rem;font-weight:600;
+}
+.result-status.charged{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--green)}
+.result-status.approved{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);color:var(--blue)}
+.result-status.declined{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:var(--red)}
+.result-status.error{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--yellow)}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── Features ─────────────────────────────────────────────── */
+.feat-grid{display:grid;gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+@media(min-width:500px){.feat-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
+.feat{background:var(--bg2);padding:1.75rem;transition:background .2s}
+.feat:hover{background:var(--bg3)}
+.feat-ico{font-size:1.6rem;margin-bottom:.9rem}
+.feat h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.feat p{font-size:.835rem;color:var(--text2);line-height:1.55}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer{
+  position:relative;z-index:1;
+  padding:3rem 1.5rem;text-align:center;
+  border-top:1px solid var(--border);
+}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{font-size:1.2rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.5rem}
+.footer-logo span{background:linear-gradient(135deg,var(--gold),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-tagline{font-size:.85rem;color:var(--text3);margin-bottom:1.5rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{font-size:.85rem;color:var(--text3);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text1)}
+.footer-copy{font-size:.78rem;color:var(--text3)}
+
+/* ── Utilities ────────────────────────────────────────────── */
+.mt1{margin-top:1rem}.mt2{margin-top:1.5rem}.mt3{margin-top:2rem}
+.tip{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:.85rem;color:var(--text2);display:flex;gap:.75rem;align-items:flex-start}
+.tip svg{flex-shrink:0;margin-top:.1rem;color:var(--accent)}
+.divider{height:1px;background:var(--border);margin:2rem 0}
+</style>
 </head>
-<body class="py-5">
-    <div class="container">
-        <h1 class="text-center mb-4">📺 IPTV Playlist Hub</h1>
-        <p class="text-center text-muted">Automatically updated 24/7 from iptv-org/iptv</p>
-        <div class="row">
-    <div class="col-12"><h2>Main</h2></div>
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Index.category</h5>
-                    <p><code>https://jogindharr.github.io/iptv/index.category.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/index.category.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Index.country</h5>
-                    <p><code>https://jogindharr.github.io/iptv/index.country.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/index.country.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Index.language</h5>
-                    <p><code>https://jogindharr.github.io/iptv/index.language.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/index.language.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            <div class="col-12"><h2>Categories</h2></div>
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Animation</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/animation.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/animation.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Auto</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/auto.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/auto.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Business</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/business.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/business.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Classic</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/classic.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/classic.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Comedy</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/comedy.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/comedy.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cooking</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/cooking.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/cooking.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Culture</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/culture.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/culture.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Documentary</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/documentary.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/documentary.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Education</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/education.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/education.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Entertainment</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/entertainment.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/entertainment.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Family</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/family.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/family.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>General</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/general.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/general.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Interactive</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/interactive.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/interactive.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kids</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/kids.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/kids.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Legislative</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/legislative.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/legislative.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lifestyle</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/lifestyle.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/lifestyle.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Movies</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/movies.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/movies.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Music</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/music.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/music.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>News</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/news.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/news.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Outdoor</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/outdoor.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/outdoor.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Public</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/public.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/public.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Relax</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/relax.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/relax.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Religious</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/religious.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/religious.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Science</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/science.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/science.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Series</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/series.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/series.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Shop</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/shop.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/shop.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sports</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/sports.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/sports.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Travel</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/travel.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/travel.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Undefined</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/undefined.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/undefined.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Weather</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/weather.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/weather.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Xxx</h5>
-                    <p><code>https://jogindharr.github.io/iptv/categories/xxx.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/categories/xxx.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            <div class="col-12"><h2>Languages</h2></div>
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Abk</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/abk.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/abk.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Acf</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/acf.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/acf.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ach</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ach.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ach.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Adh</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/adh.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/adh.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Afr</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/afr.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/afr.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Aho</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/aho.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/aho.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Aii</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/aii.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/aii.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Alz</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/alz.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/alz.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Amh</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/amh.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/amh.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ara</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ara.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ara.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Arb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/arb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/arb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Arz</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/arz.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/arz.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Asm</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/asm.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/asm.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Asp</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/asp.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/asp.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ayb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ayb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ayb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Aym</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/aym.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/aym.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Aze</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/aze.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/aze.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bak</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bak.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bak.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bba</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bba.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bba.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bbo</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bbo.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bbo.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bel</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bel.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bel.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ben</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ben.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ben.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bgc</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bgc.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bgc.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bho</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bho.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bho.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bib</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bib.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bib.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bod</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bod.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bod.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bos</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bos.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bos.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Box</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/box.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/box.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Bul</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/bul.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/bul.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/cat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/cat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ceb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ceb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ceb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ces</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ces.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ces.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cgg</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/cgg.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/cgg.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cmn</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/cmn.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/cmn.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cym</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/cym.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/cym.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Czh</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/czh.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/czh.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Dan</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/dan.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/dan.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Deu</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/deu.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/deu.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Dgi</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/dgi.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/dgi.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Div</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/div.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/div.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Dje</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/dje.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/dje.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Dyu</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/dyu.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/dyu.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ell</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ell.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ell.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eng</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/eng.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/eng.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Est</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/est.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/est.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eus</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/eus.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/eus.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ewe</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ewe.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ewe.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fao</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fao.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fao.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Far</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/far.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/far.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fas</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fas.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fas.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fil</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fil.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fil.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fin</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fin.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fin.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fon</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fon.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fon.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fra</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fra.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fra.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fry</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fry.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fry.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Fuc</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/fuc.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/fuc.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ful</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ful.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ful.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gcf</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gcf.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gcf.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gej</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gej.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gej.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gla</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gla.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gla.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gle</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gle.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gle.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Glg</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/glg.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/glg.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gom</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gom.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gom.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Grn</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/grn.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/grn.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gsw</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gsw.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gsw.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gug</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gug.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gug.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Guj</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/guj.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/guj.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Guw</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/guw.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/guw.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gux</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/gux.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/gux.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hau</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hau.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hau.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Heb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/heb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/heb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hin</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hin.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hin.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hmn</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hmn.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hmn.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hne</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hne.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hne.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hrv</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hrv.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hrv.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hun</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hun.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hun.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hye</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/hye.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/hye.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Icr</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/icr.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/icr.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Iku</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/iku.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/iku.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ind</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ind.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ind.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Isl</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/isl.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/isl.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ita</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ita.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ita.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Its</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/its.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/its.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Jav</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/jav.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/jav.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Jpn</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/jpn.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/jpn.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kab</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kab.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kab.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kan</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kan.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kan.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kaz</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kaz.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kaz.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kbp</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kbp.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kbp.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kdi</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kdi.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kdi.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Khm</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/khm.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/khm.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kik</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kik.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kik.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kin</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kin.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kin.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kir</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kir.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kir.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kmz</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kmz.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kmz.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kok</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kok.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kok.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kon</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kon.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kon.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kor</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kor.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kor.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Kur</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/kur.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/kur.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lah</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lah.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lah.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Laj</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/laj.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/laj.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lao</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lao.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lao.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lav</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lav.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lav.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lee</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lee.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lee.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lin</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lin.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lin.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lit</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lit.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lit.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lob</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lob.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lob.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ltz</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ltz.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ltz.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lua</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lua.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lua.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lug</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lug.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lug.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Luo</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/luo.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/luo.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lus</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/lus.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/lus.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mai</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mai.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mai.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mal</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mal.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mal.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mar</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mar.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mar.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mkd</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mkd.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mkd.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mkw</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mkw.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mkw.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mlt</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mlt.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mlt.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mnk</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mnk.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mnk.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mon</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mon.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mon.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mos</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mos.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mos.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mri</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mri.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mri.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Msa</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/msa.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/msa.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mya</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/mya.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/mya.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nan</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nan.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nan.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nbl</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nbl.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nbl.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nep</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nep.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nep.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nld</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nld.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nld.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nor</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nor.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nor.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nyn</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nyn.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nyn.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nyo</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/nyo.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/nyo.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ori</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ori.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ori.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Pam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/pam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/pam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Pan</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/pan.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/pan.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Pap</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/pap.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/pap.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Pol</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/pol.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/pol.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Por</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/por.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/por.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Prd</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/prd.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/prd.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Pus</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/pus.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/pus.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Que</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/que.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/que.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Rif</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/rif.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/rif.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Rkm</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/rkm.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/rkm.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Rom</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/rom.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/rom.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ron</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ron.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ron.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Rus</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/rus.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/rus.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sah</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sah.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sah.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sbd</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sbd.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sbd.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sfs</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sfs.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sfs.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Shi</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/shi.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/shi.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Shy</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/shy.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/shy.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sin</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sin.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sin.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Slk</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/slk.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/slk.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Slv</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/slv.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/slv.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Smo</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/smo.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/smo.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Snd</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/snd.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/snd.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Som</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/som.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/som.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Spa</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/spa.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/spa.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sqi</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sqi.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sqi.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Srp</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/srp.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/srp.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ssp</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ssp.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ssp.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ssw</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ssw.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ssw.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Stj</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/stj.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/stj.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sun</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sun.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sun.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Swa</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/swa.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/swa.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Swe</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/swe.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/swe.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sym</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/sym.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/sym.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tah</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tah.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tah.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Taq</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/taq.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/taq.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tat</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tat.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tat.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tel</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tel.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tel.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tgk</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tgk.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tgk.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tgl</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tgl.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tgl.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tha</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tha.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tha.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tig</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tig.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tig.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tir</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tir.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tir.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tmh</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tmh.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tmh.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tso</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tso.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tso.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ttj</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ttj.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ttj.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tuk</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tuk.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tuk.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tur</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tur.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tur.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Tzm</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/tzm.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/tzm.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Uig</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/uig.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/uig.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ukr</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ukr.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ukr.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Undefined</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/undefined.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/undefined.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Urd</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/urd.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/urd.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Uzb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/uzb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/uzb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ven</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/ven.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/ven.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Vie</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/vie.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/vie.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Wol</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/wol.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/wol.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Xho</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/xho.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/xho.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Xms</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/xms.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/xms.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Yor</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/yor.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/yor.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Yua</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/yua.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/yua.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Yue</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/yue.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/yue.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Zho</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/zho.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/zho.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Zul</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/zul.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/zul.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Zza</h5>
-                    <p><code>https://jogindharr.github.io/iptv/languages/zza.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/languages/zza.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            <div class="col-12"><h2>Regions</h2></div>
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Afr</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/afr.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/afr.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Amer</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/amer.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/amer.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Apac</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/apac.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/apac.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Arab</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/arab.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/arab.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Asean</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/asean.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/asean.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Asia</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/asia.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/asia.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Balkan</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/balkan.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/balkan.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Benelux</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/benelux.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/benelux.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Carib</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/carib.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/carib.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cas</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/cas.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/cas.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cee</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/cee.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/cee.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cenamer</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/cenamer.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/cenamer.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ceu</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/ceu.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/ceu.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Cis</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/cis.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/cis.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eaf</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/eaf.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/eaf.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eas</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/eas.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/eas.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Emea</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/emea.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/emea.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eu</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/eu.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/eu.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Eur</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/eur.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/eur.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Gcc</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/gcc.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/gcc.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Hispam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/hispam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/hispam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Lac</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/lac.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/lac.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Latam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/latam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/latam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Maghreb</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/maghreb.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/maghreb.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mena</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/mena.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/mena.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Mideast</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/mideast.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/mideast.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/nam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/nam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Neu</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/neu.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/neu.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Noram</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/noram.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/noram.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Nord</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/nord.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/nord.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Oce</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/oce.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/oce.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Saf</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/saf.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/saf.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sas</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/sas.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/sas.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Sea</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/sea.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/sea.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ser</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/ser.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/ser.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Southam</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/southam.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/southam.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ssa</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/ssa.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/ssa.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Un</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/un.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/un.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Waf</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/waf.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/waf.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Was</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/was.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/was.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Wer</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/wer.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/wer.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>Ww</h5>
-                    <p><code>https://jogindharr.github.io/iptv/regions/ww.m3u</code></p>
-                    <a href="https://jogindharr.github.io/iptv/regions/ww.m3u" class="btn btn-primary btn-sm">Copy M3U Link</a>
-                </div>
-            </div>
-            
+<body>
+
+<!-- ── Navbar ──────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-dot"></div>
+      <span>AutoShopify</span> API
+    </a>
+    <ul class="nav-links">
+      <li><a href="#modes">Modes</a></li>
+      <li><a href="#api">Endpoints</a></li>
+      <li><a href="#tester">Tester</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a class="nav-pro" href="#api">PRO PLAN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-tag">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+    Real Shopify Checkout Engine · Railway Pro
+  </div>
+  <h1>The <em>Fastest</em> Shopify<br>Card Validation API</h1>
+  <p>Real TLS fingerprinting, PCI tokenization, GraphQL proposals & live receipt polling.</p>
+  <div class="hero-pills">
+    <span class="pill g">⚡ 1,200 checks/min</span>
+    <span class="pill a">🔀 500 concurrent</span>
+    <span class="pill y">🌐 Shopify Payments</span>
+    <span class="pill">🛡 Proxy support</span>
+    <span class="pill">♻️ Auto-retry</span>
+  </div>
+  <div class="hero-url" onclick="copyBaseUrl(this)" title="Click to copy">
+    <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    <span class="url-text">https://autoshopifyapis-production.up.railway.app</span>
+  </div>
+</section>
+
+<!-- ── Stats ───────────────────────────────────────────────── -->
+<div style="position:relative;z-index:1;padding:0 1.5rem;margin-top:-1px">
+  <div style="max-width:1100px;margin:0 auto;transform:translateY(-50%)" class="stats-bar">
+    <div class="stat"><div class="stat-val g">500</div><div class="stat-label">Concurrent Slots</div></div>
+    <div class="stat"><div class="stat-val a">600</div><div class="stat-label">Thread Workers</div></div>
+    <div class="stat"><div class="stat-val y">1,200+</div><div class="stat-label">Checks / Min</div></div>
+    <div class="stat"><div class="stat-val b">24 vCPU</div><div class="stat-label">Railway Pro</div></div>
+  </div>
+</div>
+
+<!-- ── Modes ───────────────────────────────────────────────── -->
+<section id="modes">
+  <div class="section-inner">
+    <div class="section-label">Checkout Modes</div>
+    <div class="section-title">Low Amount vs High Amount</div>
+    <div class="section-sub">Choose the right mode based on your validation needs.</div>
+
+    <div class="mode-grid">
+      <div class="mode-card low">
+        <div class="mode-head">
+          <span class="mode-badge">Low Amount</span>
+          <span class="mode-title">$1 – $10</span>
         </div>
+        <div class="mode-rows">
+          <div class="mode-row"><div class="mode-row-icon">💰</div><div class="mode-row-key">Price range</div><div class="mode-row-val">$1.00 – $10.00</div></div>
+          <div class="mode-row"><div class="mode-row-icon">⚡</div><div class="mode-row-key">Speed</div><div class="mode-row-val">15 – 30 seconds</div></div>
+          <div class="mode-row"><div class="mode-row-icon">🎯</div><div class="mode-row-key">Purpose</div><div class="mode-row-val">Quick card validation</div></div>
+          <div class="mode-row"><div class="mode-row-icon">📦</div><div class="mode-row-key">Includes</div><div class="mode-row-val">Product + Shipping + Tax</div></div>
+          <div class="mode-row"><div class="mode-row-icon">♻️</div><div class="mode-row-key">Fallback</div><div class="mode-row-val">Auto switches to cheapest if no $1–$10 product</div></div>
+          <div class="mode-row"><div class="mode-row-icon">🔑</div><div class="mode-row-key">Parameter</div><div class="mode-row-val"><code>low=true</code> (default)</div></div>
+        </div>
+      </div>
+
+      <div class="mode-card high">
+        <div class="mode-head">
+          <span class="mode-badge">High Amount</span>
+          <span class="mode-title">Any Price</span>
+        </div>
+        <div class="mode-rows">
+          <div class="mode-row"><div class="mode-row-icon">💰</div><div class="mode-row-key">Price range</div><div class="mode-row-val">Cheapest available</div></div>
+          <div class="mode-row"><div class="mode-row-icon">⚡</div><div class="mode-row-key">Speed</div><div class="mode-row-val">20 – 45 seconds</div></div>
+          <div class="mode-row"><div class="mode-row-icon">🎯</div><div class="mode-row-key">Purpose</div><div class="mode-row-val">Full transaction test</div></div>
+          <div class="mode-row"><div class="mode-row-icon">📦</div><div class="mode-row-key">Includes</div><div class="mode-row-val">Product + Shipping + Tax</div></div>
+          <div class="mode-row"><div class="mode-row-icon">♻️</div><div class="mode-row-key">Fallback</div><div class="mode-row-val">Uses cheapest product on store</div></div>
+          <div class="mode-row"><div class="mode-row-icon">🔑</div><div class="mode-row-key">Parameter</div><div class="mode-row-val"><code>low=false</code></div></div>
+        </div>
+      </div>
     </div>
-    <script>
-        document.querySelectorAll('.btn-primary').forEach(button => {
-            button.onclick = (e) => {
-                e.preventDefault();
-                const url = button.getAttribute('href');
-                navigator.clipboard.writeText(url).then(() => {
-                    const originalText = button.innerText;
-                    button.innerText = 'Copied!';
-                    setTimeout(() => button.innerText = originalText, 2000);
-                });
-            }
-        });
-    </script>
+
+    <div class="tip mt2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>Both modes perform the <strong>complete</strong> Shopify checkout flow — cart creation, GraphQL proposals, PCI card vaulting, payment submission, and receipt polling. The only difference is how the product variant is selected.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── API Docs ─────────────────────────────────────────────── -->
+<section id="api">
+  <div class="section-inner">
+    <div class="section-label">Reference</div>
+    <div class="section-title">API Endpoints</div>
+    <div class="section-sub">All endpoints return JSON. No authentication required.</div>
+
+    <!-- GET /check -->
+    <div class="endpoint">
+      <div class="endpoint-head">
+        <span class="method">GET</span>
+        <span class="ep-path">/check</span>
+        <span class="ep-desc">Validate a card via real Shopify checkout</span>
+      </div>
+      <div class="endpoint-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parameter</th><th>Type</th><th>Status</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="td-name">card</td><td>string</td><td><span class="badge-r">Required</span></td><td>Card in format <code>number|MM|YYYY|cvv</code></td></tr>
+              <tr><td class="td-name">url</td><td>string</td><td><span class="badge-r">Required</span></td><td>Shopify store URL (e.g. <code>https://store.myshopify.com</code>)</td></tr>
+              <tr><td class="td-name">low</td><td>boolean</td><td><span class="badge-o">Optional</span></td><td><code>true</code> = $1–$10 range &nbsp;|&nbsp; <code>false</code> = cheapest product. Default: <code>true</code></td></tr>
+              <tr><td class="td-name">proxy</td><td>string</td><td><span class="badge-o">Optional</span></td><td>Proxy URL — formats: <code>http://u:p@host:port</code> or <code>host:port:user:pass</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-wrap mt2">
+          <div class="code-label">Request</div>
+          <pre id="req1">GET /check?card=<span class="str">5455122802569146|12|2027|543</span>&url=<span class="str">https://yourstore.myshopify.com</span>&low=<span class="bool">true</span><button class="copy-btn" onclick="copyCode('req1',this)">Copy</button></pre>
+        </div>
+
+        <div class="code-wrap mt2">
+          <div class="code-label">Response — CHARGED</div>
+          <pre id="res1">{
+  <span class="key">"card"</span>:         <span class="str">"5455122802569146|12|2027|543"</span>,
+  <span class="key">"status"</span>:       <span class="str">"CHARGED"</span>,
+  <span class="key">"status_code"</span>:  <span class="str">"ORDER_PLACED"</span>,
+  <span class="key">"amount"</span>:       <span class="str">"7.49"</span>,
+  <span class="key">"currency"</span>:     <span class="str">"USD"</span>,
+  <span class="key">"gateway"</span>:      <span class="str">"Shopify Payments"</span>,
+  <span class="key">"site_name"</span>:    <span class="str">"yourstore.myshopify.com"</span>,
+  <span class="key">"receipt_url"</span>:  <span class="str">"https://yourstore.myshopify.com/thank-you/..."</span>,
+  <span class="key">"error"</span>:        <span class="str">""</span>,
+  <span class="key">"success"</span>:      <span class="bool">true</span>,
+  <span class="key">"checked_at"</span>:   <span class="str">"2026-06-23T14:30:01.423"</span>
+}<button class="copy-btn" onclick="copyCode('res1',this)">Copy</button></pre>
+        </div>
+
+        <div class="mt2">
+          <p style="font-size:.85rem;color:var(--text3);margin-bottom:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Response Statuses</p>
+          <div class="status-grid">
+            <div class="status-card charged"><div class="status-dot"></div><div class="status-name">CHARGED</div><div class="status-desc">Real order placed &amp; paid</div></div>
+            <div class="status-card approved"><div class="status-dot"></div><div class="status-name">APPROVED</div><div class="status-desc">Card valid (3DS / low funds)</div></div>
+            <div class="status-card declined"><div class="status-dot"></div><div class="status-name">DECLINED</div><div class="status-desc">Card rejected by processor</div></div>
+            <div class="status-card error"><div class="status-dot"></div><div class="status-name">ERROR</div><div class="status-desc">Proxy / store / network issue</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GET /health -->
+    <div class="endpoint">
+      <div class="endpoint-head">
+        <span class="method">GET</span>
+        <span class="ep-path">/health</span>
+        <span class="ep-desc">Live status &amp; session statistics</span>
+      </div>
+      <div class="endpoint-body">
+        <div class="code-wrap">
+          <div class="code-label">Response</div>
+          <pre id="res2">{
+  <span class="key">"status"</span>: <span class="str">"running"</span>,
+  <span class="key">"stats"</span>: {
+    <span class="key">"total"</span>:    <span class="num">4820</span>,
+    <span class="key">"charged"</span>:  <span class="num">1230</span>,
+    <span class="key">"approved"</span>: <span class="num">2100</span>,
+    <span class="key">"declined"</span>: <span class="num">1280</span>,
+    <span class="key">"error"</span>:    <span class="num">210</span>
+  }
+}<button class="copy-btn" onclick="copyCode('res2',this)">Copy</button></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retry logic info -->
+    <div class="tip mt1">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+      <div><strong>Auto-retry built-in:</strong> The API automatically retries on proxy failures (without proxy), and falls back from low-amount to cheapest-product mode when no $1–$10 variant exists on the store. Up to 4 fallback attempts per request.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Live Tester ──────────────────────────────────────────── -->
+<section id="tester">
+  <div class="section-inner">
+    <div class="section-label">Interactive</div>
+    <div class="section-title">Live API Tester</div>
+    <div class="section-sub">Test the endpoint directly from your browser.</div>
+
+    <div class="tester">
+      <div class="tester-head">
+        <h3>Send a Request</h3>
+        <span class="live-badge"><span class="live-dot"></span>Live</span>
+      </div>
+      <div class="tester-body">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Card Number<span>*</span></label>
+            <input id="t-card" type="text" placeholder="1234567890123456|12|2028|123">
+          </div>
+          <div class="form-group">
+            <label>Shop URL<span>*</span></label>
+            <input id="t-url" type="url" placeholder="https://store.myshopify.com">
+          </div>
+          <div class="form-group">
+            <label>Proxy <span style="color:var(--text3);font-weight:400">(optional)</span></label>
+            <input id="t-proxy" type="text" placeholder="http://user:pass@host:port">
+          </div>
+          <div class="form-group" style="justify-content:flex-end">
+            <label>Mode</label>
+            <div class="toggle-row">
+              <div>
+                <div class="toggle-label" id="mode-label">Low Amount ($1–$10)</div>
+                <div class="toggle-sub">Toggle for high amount mode</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="t-low" checked onchange="updateModeLabel(this)">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn" onclick="runTest()" id="test-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Run Check
+        </button>
+
+        <div class="result-wrap" id="result-wrap">
+          <div class="result-status" id="result-status"></div>
+          <div class="code-wrap">
+            <div class="code-label">Response</div>
+            <pre id="result-json" style="max-height:340px;overflow-y:auto"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ────────────────────────────────────────────── -->
+<section id="features">
+  <div class="section-inner">
+    <div class="section-label">Platform</div>
+    <div class="section-title">Enterprise Features</div>
+    <div class="section-sub" style="margin-bottom:2rem">Built for scale with Railway Pro infrastructure.</div>
+
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-ico">🔐</div><h3>Real TLS Fingerprinting</h3><p>curl_cffi with randomised browser profiles — Chrome, Edge, Safari. Bypasses bot detection naturally.</p></div>
+      <div class="feat"><div class="feat-ico">💳</div><h3>PCI Card Vaulting</h3><p>Cards tokenised via Shopify PCI vault (shopifycs.com / shopifyinc.com) before submission.</p></div>
+      <div class="feat"><div class="feat-ico">🔗</div><h3>GraphQL Proposals</h3><p>Full 5-step checkout proposal flow — email, address, shipping, tax acceptance, signed handles.</p></div>
+      <div class="feat"><div class="feat-ico">🌍</div><h3>Multi-Country Fallback</h3><p>Automatically tries alternative country addresses when a store doesn't ship to the primary country.</p></div>
+      <div class="feat"><div class="feat-ico">♻️</div><h3>Smart Auto-Retry</h3><p>Proxy errors trigger a no-proxy retry. Missing cheap variants fallback to cheapest product. Up to 4 attempts.</p></div>
+      <div class="feat"><div class="feat-ico">⚡</div><h3>500 Concurrent Slots</h3><p>Railway Pro: 24 vCPU, 24 GB RAM. 600-thread pool, no rate limiting, 20 uvicorn workers.</p></div>
+      <div class="feat"><div class="feat-ico">📊</div><h3>Live Receipt Polling</h3><p>Polls up to 30 times for SuccessfulReceipt, FailedReceipt, or ActionRequiredReceipt (3DS).</p></div>
+      <div class="feat"><div class="feat-ico">🛡</div><h3>Tax Change Handling</h3><p>Detects TAX_NEW_TAX_MUST_BE_ACCEPTED and retries submission with updated amounts automatically.</p></div>
+      <div class="feat"><div class="feat-ico">🌐</div><h3>Always Shopify Payments</h3><p>Every check goes through Shopify's native payment gateway — no third-party processors involved.</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cards four mt3" style="margin-top:1.5rem">
+      <div class="card"><div class="card-icon">🔄</div><h3>Proxy Formats</h3><p><code>http://u:p@host:port</code><br><code>host:port:user:pass</code><br><code>host:port</code></p></div>
+      <div class="card"><div class="card-icon">📡</div><h3>Uptime</h3><p>Railway Pro 99.99% SLA. Auto-restart on crash. 30-day log history.</p></div>
+      <div class="card"><div class="card-icon">🔒</div><h3>No Auth Needed</h3><p>Private API — no API keys, no rate limits. Run from your bot directly.</p></div>
+      <div class="card"><div class="card-icon">📦</div><h3>Digital + Physical</h3><p>Detects product type automatically. Digital products skip shipping step.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">⚡ <span>AutoShopify</span> API</div>
+    <div class="footer-tagline">Real Shopify checkout engine — Railway Pro infrastructure</div>
+    <div class="footer-links">
+      <a href="#modes">Modes</a>
+      <a href="#api">Endpoints</a>
+      <a href="#tester">Live Tester</a>
+      <a href="#features">Features</a>
+      <a href="https://autoshopifyapis-production.up.railway.app/health" target="_blank">Health</a>
+    </div>
+    <div class="footer-copy">© 2026 AutoShopify API · Built for Nancy Bot</div>
+  </div>
+</footer>
+
+<script>
+const BASE = 'https://autoshopifyapis-production.up.railway.app';
+
+function copyBaseUrl(el){
+  navigator.clipboard.writeText(BASE).then(()=>{
+    el.querySelector('.url-text').textContent='Copied!';
+    setTimeout(()=>el.querySelector('.url-text').textContent=BASE,1500);
+  });
+}
+
+function copyCode(id,btn){
+  const pre=document.getElementById(id);
+  const text=pre.innerText.replace(/^Copy$/m,'').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},1500);
+  });
+}
+
+function updateModeLabel(el){
+  document.getElementById('mode-label').textContent=el.checked?'Low Amount ($1–$10)':'High Amount (Any Price)';
+}
+
+async function runTest(){
+  const card =document.getElementById('t-card').value.trim();
+  const url  =document.getElementById('t-url').value.trim();
+  const proxy=document.getElementById('t-proxy').value.trim();
+  const low  =document.getElementById('t-low').checked;
+  const btn  =document.getElementById('test-btn');
+  const wrap =document.getElementById('result-wrap');
+  const stat =document.getElementById('result-status');
+  const json =document.getElementById('result-json');
+
+  if(!card||!url){
+    stat.className='result-status error';
+    stat.innerHTML='<span>⚠️</span> Card and Shop URL are required.';
+    wrap.classList.add('show');return;
+  }
+
+  btn.disabled=true;
+  btn.innerHTML='<div class="spinner"></div>Checking…';
+  wrap.classList.remove('show');
+
+  const params=new URLSearchParams({card,url,low});
+  if(proxy)params.append('proxy',proxy);
+
+  const t0=Date.now();
+  try{
+    const r=await fetch(`${BASE}/check?${params}`);
+    const d=await r.json();
+    const ms=Date.now()-t0;
+    const s=(d.status||'').toUpperCase();
+
+    const cls=s==='CHARGED'?'charged':s==='APPROVED'?'approved':s==='DECLINED'?'declined':'error';
+    const ico=s==='CHARGED'?'✅':s==='APPROVED'?'⚡':s==='DECLINED'?'❌':'⚠️';
+    const msg=s==='CHARGED'?'Order Placed — Card Charged':s==='APPROVED'?'Card Approved':s==='DECLINED'?'Card Declined':'Error / Retry';
+    stat.className=`result-status ${cls}`;
+    stat.innerHTML=`<span>${ico}</span> <strong>${msg}</strong> <span style="margin-left:auto;font-weight:400;font-size:.8rem;opacity:.7">${(ms/1000).toFixed(1)}s</span>`;
+
+    json.innerHTML=syntaxHL(JSON.stringify(d,null,2));
+    if(!json.querySelector('.copy-btn')){
+      const cb=document.createElement('button');
+      cb.className='copy-btn';cb.textContent='Copy';
+      cb.onclick=()=>{navigator.clipboard.writeText(JSON.stringify(d,null,2)).then(()=>{cb.textContent='Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='Copy';cb.classList.remove('copied')},1500)})};
+      json.appendChild(cb);
+    }
+    wrap.classList.add('show');
+  }catch(e){
+    stat.className='result-status error';
+    stat.innerHTML=`<span>⚠️</span> ${e.message}`;
+    json.textContent='';wrap.classList.add('show');
+  }finally{
+    btn.disabled=false;
+    btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>Run Check';
+  }
+}
+
+function syntaxHL(s){
+  return s
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,m=>{
+      let c='num';
+      if(/^"/.test(m)){c=/:$/.test(m)?'key':'str';}
+      else if(/true|false/.test(m))c='bool';
+      else if(/null/.test(m))c='kw';
+      return`<span class="${c}">${m}</span>`;
+    });
+}
+</script>
 </body>
 </html>
-    
