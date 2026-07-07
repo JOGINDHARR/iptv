@@ -164,6 +164,8 @@ https://ammedia.siar.us/ammedia/live/playlist.m3u8
 https://uni01rtmp.tulix.tv/amazingdtv/amazingdtv/playlist.m3u8
 #EXTINF:-1 tvg-id="AmigosTVChiquimula.gt@SD" tvg-logo="https://i.ibb.co/tLhcNTD/amigos-tv-chiquimula.png" group-title="Religious",Amigos TV Chiquimula (480p)
 https://antmedia.cablevisionrobles.com:5443/LiveApp/streams/CqwAgRagMvBNYN8c1731608980342.m3u8
+#EXTINF:-1 tvg-id="AmozhgaryTV.iq@SD" tvg-logo="https://i.imgur.com/sseqFsO.png" group-title="Religious",Amozhgary TV
+https://app-live.org/live/3268334b/index.m3u8
 #EXTINF:-1 tvg-id="AnandTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Anand_TV.png" group-title="Religious",Anand TV (1080p)
 https://live.legitpro.co.in/anandtv/index.m3u8
 #EXTINF:-1 tvg-id="AndesTelevision.pe@SD" tvg-logo="https://i.imgur.com/CsW4Op8.png" group-title="Religious",Andes Television (720p)
@@ -279,6 +281,8 @@ https://goliveafrica.media:9998/live/638da5440743c/index.m3u8
 https://btn.nowcdn.co.kr/btn/btnlive2m/playlist.m3u8
 #EXTINF:-1 tvg-id="BXInspire.us@SD" tvg-logo="https://i.imgur.com/PF71rdZ.png" group-title="General;Religious",BX Inspire (720p)
 https://reflect-stream-bronxnet.cablecast.tv/live-18/live/stream-7/live.m3u8
+#EXTINF:-1 tvg-id="Canal6VientoRecio.ar@SD" tvg-logo="https://i.imgur.com/liyTNzK.png" group-title="Religious",Canal 6 Viento Recio
+https://stmvideo6.livecastv.com/vientorecio/vientorecio/playlist.m3u8
 #EXTINF:-1 tvg-id="Canal13Jujuy.ar@SD" tvg-logo="https://i.imgur.com/lmKLiJ3.jpg" group-title="Religious",Canal 13 Jujuy TV (720p)
 https://genexservicios.com:19360/canal13jujuy/canal13jujuy.m3u8
 #EXTINF:-1 tvg-id="Canal26TVIAP.sv@SD" tvg-logo="https://i.imgur.com/JE7FsnN.png" group-title="Religious",Canal 26 TV IAP (1080p)
@@ -1013,8 +1017,8 @@ http://media.mohabat.tv:1935/live_transcoder/ngrp:mohabat.stream_all/playlist.m3
 https://5ca9af4645e15.streamlock.net/montemaria/videomontemaria/playlist.m3u8
 #EXTINF:-1 tvg-id="MoreGraceTV.ng@SD" tvg-logo="https://i.imgur.com/DNTeCQt.png" group-title="Religious",More Grace TV (410p) [Not 24/7]
 https://atechgroupuk.site/ETV.m3u8
-#EXTINF:-1 tvg-id="MorningCloudTV.ke@SD" tvg-logo="https://i.imgur.com/Lxfd2ip.png" group-title="Religious",Morning Cloud TV
-https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_026/Stream/playlist.m3u8
+#EXTINF:-1 tvg-id="MorningCloudTV.ke@SD" tvg-logo="https://i.imgur.com/Lxfd2ip.png" group-title="Religious",Morning Cloud TV (720p)
+https://livecdn.live247stream.com/mc/tv/playlist.m3u8
 #EXTINF:-1 tvg-id="MQTV.id@SD" tvg-logo="https://i.imgur.com/d8dQo6E.png" group-title="Religious",MQTV (720p) [Not 24/7]
 https://5bf7b725107e5.streamlock.net/mqtv/mqtv/playlist.m3u8
 #EXTINF:-1 tvg-id="MTA1World.uk@SD" tvg-logo="https://i.imgur.com/bYiRfAg.png" group-title="Religious",MTA1 World (720p)
@@ -1220,6 +1224,8 @@ https://live.nixsat.com/play/rtm/index.m3u8
 https://5bf8041cb3fed.streamlock.net/ReformaTV/ReformaTV/playlist.m3u8
 #EXTINF:-1 tvg-id="RhemaTV.gt@SD" tvg-logo="https://i.imgur.com/5o821rT.png" group-title="Religious",Rhema TV (720p)
 https://5e85d90130e77.streamlock.net/6006/6006/playlist.m3u8
+#EXTINF:-1 tvg-id="RiddimHopeTV.tt@SD" tvg-logo="https://i.imgur.com/c27k0Bd.png" group-title="Religious",Riddim & Hope TV
+https://6zklxwavdw9b-hls-live.5centscdn.com/RIDDIMNHOPE/0954119dc19d9003dd5f4bb37b3f559e.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="RITTV.br@SD" tvg-logo="https://i.imgur.com/Unjs1wi.png" group-title="Religious",RIT TV (1080p)
 https://acesso.ecast.site:3648/live/ritlive.m3u8
 #EXTINF:-1 tvg-id="RLWTV.za@SD" tvg-logo="https://i.imgur.com/VcwqoEF.png" group-title="Religious",RLW TV (576p) [Not 24/7]
@@ -1411,6 +1417,10 @@ https://v2.tustreaming.cl/tnetv/index.m3u8
 https://d34z4embz0hjf6.cloudfront.net/out/v1/d55b3323a9f142638f897378f0b526fe/index.m3u8
 #EXTINF:-1 tvg-id="TraceGospel.fr@SD" tvg-logo="https://i.imgur.com/X0UmU3K.png" group-title="Music;Religious",Trace Gospel (1080p)
 https://channels.trace.plus/Traceprod/GOSPEL_FR/.m3u8
+#EXTINF:-1 tvg-id="TraceGospel.fr@NigeriaandEastAfrica" tvg-logo="https://i.imgur.com/X0UmU3K.png" group-title="Music;Religious",Trace Gospel Nigeria and East Africa
+https://channels.trace.plus/Traceprod/GOSPEL_ROA/index.m3u8
+#EXTINF:-1 tvg-id="TraceGospel.fr@SouthernAfrica" tvg-logo="https://i.imgur.com/X0UmU3K.png" group-title="Music;Religious",Trace Gospel Southern Africa
+https://channels.trace.plus/Traceprod/GOSPEL_SA_ld/index.m3u8
 #EXTINF:-1 tvg-id="Trece.es@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Trece.svg/960px-Trece.svg.png" group-title="Religious",Trece TV (576p)
 https://live-edge-bhs-1.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/playlist.m3u8
 #EXTINF:-1 tvg-id="TrinityTV.tt@SD" tvg-logo="https://i.imgur.com/69igLlk.png" group-title="Religious",Trinity TV (480p) [Not 24/7]
