@@ -219,6 +219,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Ssw | [`https://jogindharr.github.io/iptv/languages/ssw.m3u`](https://jogindharr.github.io/iptv/languages/ssw.m3u) |
 | Stj | [`https://jogindharr.github.io/iptv/languages/stj.m3u`](https://jogindharr.github.io/iptv/languages/stj.m3u) |
 | Sun | [`https://jogindharr.github.io/iptv/languages/sun.m3u`](https://jogindharr.github.io/iptv/languages/sun.m3u) |
+| Svc | [`https://jogindharr.github.io/iptv/languages/svc.m3u`](https://jogindharr.github.io/iptv/languages/svc.m3u) |
 | Swa | [`https://jogindharr.github.io/iptv/languages/swa.m3u`](https://jogindharr.github.io/iptv/languages/swa.m3u) |
 | Swe | [`https://jogindharr.github.io/iptv/languages/swe.m3u`](https://jogindharr.github.io/iptv/languages/swe.m3u) |
 | Sym | [`https://jogindharr.github.io/iptv/languages/sym.m3u`](https://jogindharr.github.io/iptv/languages/sym.m3u) |
