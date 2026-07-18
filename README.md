@@ -232,6 +232,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Tgk | [`https://jogindharr.github.io/iptv/languages/tgk.m3u`](https://jogindharr.github.io/iptv/languages/tgk.m3u) |
 | Tgl | [`https://jogindharr.github.io/iptv/languages/tgl.m3u`](https://jogindharr.github.io/iptv/languages/tgl.m3u) |
 | Tha | [`https://jogindharr.github.io/iptv/languages/tha.m3u`](https://jogindharr.github.io/iptv/languages/tha.m3u) |
+| Thr | [`https://jogindharr.github.io/iptv/languages/thr.m3u`](https://jogindharr.github.io/iptv/languages/thr.m3u) |
 | Tig | [`https://jogindharr.github.io/iptv/languages/tig.m3u`](https://jogindharr.github.io/iptv/languages/tig.m3u) |
 | Tir | [`https://jogindharr.github.io/iptv/languages/tir.m3u`](https://jogindharr.github.io/iptv/languages/tir.m3u) |
 | Tmh | [`https://jogindharr.github.io/iptv/languages/tmh.m3u`](https://jogindharr.github.io/iptv/languages/tmh.m3u) |
