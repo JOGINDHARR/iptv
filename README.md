@@ -124,6 +124,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Hat | [`https://jogindharr.github.io/iptv/languages/hat.m3u`](https://jogindharr.github.io/iptv/languages/hat.m3u) |
 | Hau | [`https://jogindharr.github.io/iptv/languages/hau.m3u`](https://jogindharr.github.io/iptv/languages/hau.m3u) |
 | Heb | [`https://jogindharr.github.io/iptv/languages/heb.m3u`](https://jogindharr.github.io/iptv/languages/heb.m3u) |
+| Her | [`https://jogindharr.github.io/iptv/languages/her.m3u`](https://jogindharr.github.io/iptv/languages/her.m3u) |
 | Hin | [`https://jogindharr.github.io/iptv/languages/hin.m3u`](https://jogindharr.github.io/iptv/languages/hin.m3u) |
 | Hmn | [`https://jogindharr.github.io/iptv/languages/hmn.m3u`](https://jogindharr.github.io/iptv/languages/hmn.m3u) |
 | Hne | [`https://jogindharr.github.io/iptv/languages/hne.m3u`](https://jogindharr.github.io/iptv/languages/hne.m3u) |
