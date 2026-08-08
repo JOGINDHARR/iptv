@@ -189,6 +189,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Nyn | [`https://jogindharr.github.io/iptv/languages/nyn.m3u`](https://jogindharr.github.io/iptv/languages/nyn.m3u) |
 | Nyo | [`https://jogindharr.github.io/iptv/languages/nyo.m3u`](https://jogindharr.github.io/iptv/languages/nyo.m3u) |
 | Ori | [`https://jogindharr.github.io/iptv/languages/ori.m3u`](https://jogindharr.github.io/iptv/languages/ori.m3u) |
+| Ory | [`https://jogindharr.github.io/iptv/languages/ory.m3u`](https://jogindharr.github.io/iptv/languages/ory.m3u) |
 | Pam | [`https://jogindharr.github.io/iptv/languages/pam.m3u`](https://jogindharr.github.io/iptv/languages/pam.m3u) |
 | Pan | [`https://jogindharr.github.io/iptv/languages/pan.m3u`](https://jogindharr.github.io/iptv/languages/pan.m3u) |
 | Pap | [`https://jogindharr.github.io/iptv/languages/pap.m3u`](https://jogindharr.github.io/iptv/languages/pap.m3u) |
