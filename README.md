@@ -60,7 +60,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Alz | [`https://jogindharr.github.io/iptv/languages/alz.m3u`](https://jogindharr.github.io/iptv/languages/alz.m3u) |
 | Amh | [`https://jogindharr.github.io/iptv/languages/amh.m3u`](https://jogindharr.github.io/iptv/languages/amh.m3u) |
 | Ara | [`https://jogindharr.github.io/iptv/languages/ara.m3u`](https://jogindharr.github.io/iptv/languages/ara.m3u) |
-| Arb | [`https://jogindharr.github.io/iptv/languages/arb.m3u`](https://jogindharr.github.io/iptv/languages/arb.m3u) |
 | Arz | [`https://jogindharr.github.io/iptv/languages/arz.m3u`](https://jogindharr.github.io/iptv/languages/arz.m3u) |
 | Asm | [`https://jogindharr.github.io/iptv/languages/asm.m3u`](https://jogindharr.github.io/iptv/languages/asm.m3u) |
 | Asp | [`https://jogindharr.github.io/iptv/languages/asp.m3u`](https://jogindharr.github.io/iptv/languages/asp.m3u) |
@@ -69,7 +68,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Aze | [`https://jogindharr.github.io/iptv/languages/aze.m3u`](https://jogindharr.github.io/iptv/languages/aze.m3u) |
 | Bak | [`https://jogindharr.github.io/iptv/languages/bak.m3u`](https://jogindharr.github.io/iptv/languages/bak.m3u) |
 | Bam | [`https://jogindharr.github.io/iptv/languages/bam.m3u`](https://jogindharr.github.io/iptv/languages/bam.m3u) |
-| Bba | [`https://jogindharr.github.io/iptv/languages/bba.m3u`](https://jogindharr.github.io/iptv/languages/bba.m3u) |
 | Bbo | [`https://jogindharr.github.io/iptv/languages/bbo.m3u`](https://jogindharr.github.io/iptv/languages/bbo.m3u) |
 | Bel | [`https://jogindharr.github.io/iptv/languages/bel.m3u`](https://jogindharr.github.io/iptv/languages/bel.m3u) |
 | Ben | [`https://jogindharr.github.io/iptv/languages/ben.m3u`](https://jogindharr.github.io/iptv/languages/ben.m3u) |
@@ -81,7 +79,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Box | [`https://jogindharr.github.io/iptv/languages/box.m3u`](https://jogindharr.github.io/iptv/languages/box.m3u) |
 | Bul | [`https://jogindharr.github.io/iptv/languages/bul.m3u`](https://jogindharr.github.io/iptv/languages/bul.m3u) |
 | Cat | [`https://jogindharr.github.io/iptv/languages/cat.m3u`](https://jogindharr.github.io/iptv/languages/cat.m3u) |
-| Ceb | [`https://jogindharr.github.io/iptv/languages/ceb.m3u`](https://jogindharr.github.io/iptv/languages/ceb.m3u) |
 | Ces | [`https://jogindharr.github.io/iptv/languages/ces.m3u`](https://jogindharr.github.io/iptv/languages/ces.m3u) |
 | Cgg | [`https://jogindharr.github.io/iptv/languages/cgg.m3u`](https://jogindharr.github.io/iptv/languages/cgg.m3u) |
 | Cmn | [`https://jogindharr.github.io/iptv/languages/cmn.m3u`](https://jogindharr.github.io/iptv/languages/cmn.m3u) |
@@ -110,16 +107,11 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Fuc | [`https://jogindharr.github.io/iptv/languages/fuc.m3u`](https://jogindharr.github.io/iptv/languages/fuc.m3u) |
 | Ful | [`https://jogindharr.github.io/iptv/languages/ful.m3u`](https://jogindharr.github.io/iptv/languages/ful.m3u) |
 | Gcf | [`https://jogindharr.github.io/iptv/languages/gcf.m3u`](https://jogindharr.github.io/iptv/languages/gcf.m3u) |
-| Gej | [`https://jogindharr.github.io/iptv/languages/gej.m3u`](https://jogindharr.github.io/iptv/languages/gej.m3u) |
 | Gla | [`https://jogindharr.github.io/iptv/languages/gla.m3u`](https://jogindharr.github.io/iptv/languages/gla.m3u) |
 | Gle | [`https://jogindharr.github.io/iptv/languages/gle.m3u`](https://jogindharr.github.io/iptv/languages/gle.m3u) |
 | Glg | [`https://jogindharr.github.io/iptv/languages/glg.m3u`](https://jogindharr.github.io/iptv/languages/glg.m3u) |
 | Gom | [`https://jogindharr.github.io/iptv/languages/gom.m3u`](https://jogindharr.github.io/iptv/languages/gom.m3u) |
-| Grn | [`https://jogindharr.github.io/iptv/languages/grn.m3u`](https://jogindharr.github.io/iptv/languages/grn.m3u) |
-| Gsw | [`https://jogindharr.github.io/iptv/languages/gsw.m3u`](https://jogindharr.github.io/iptv/languages/gsw.m3u) |
-| Gug | [`https://jogindharr.github.io/iptv/languages/gug.m3u`](https://jogindharr.github.io/iptv/languages/gug.m3u) |
 | Guj | [`https://jogindharr.github.io/iptv/languages/guj.m3u`](https://jogindharr.github.io/iptv/languages/guj.m3u) |
-| Guw | [`https://jogindharr.github.io/iptv/languages/guw.m3u`](https://jogindharr.github.io/iptv/languages/guw.m3u) |
 | Gux | [`https://jogindharr.github.io/iptv/languages/gux.m3u`](https://jogindharr.github.io/iptv/languages/gux.m3u) |
 | Hat | [`https://jogindharr.github.io/iptv/languages/hat.m3u`](https://jogindharr.github.io/iptv/languages/hat.m3u) |
 | Hau | [`https://jogindharr.github.io/iptv/languages/hau.m3u`](https://jogindharr.github.io/iptv/languages/hau.m3u) |
@@ -158,7 +150,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Lah | [`https://jogindharr.github.io/iptv/languages/lah.m3u`](https://jogindharr.github.io/iptv/languages/lah.m3u) |
 | Laj | [`https://jogindharr.github.io/iptv/languages/laj.m3u`](https://jogindharr.github.io/iptv/languages/laj.m3u) |
 | Lao | [`https://jogindharr.github.io/iptv/languages/lao.m3u`](https://jogindharr.github.io/iptv/languages/lao.m3u) |
-| Lat | [`https://jogindharr.github.io/iptv/languages/lat.m3u`](https://jogindharr.github.io/iptv/languages/lat.m3u) |
 | Lav | [`https://jogindharr.github.io/iptv/languages/lav.m3u`](https://jogindharr.github.io/iptv/languages/lav.m3u) |
 | Lee | [`https://jogindharr.github.io/iptv/languages/lee.m3u`](https://jogindharr.github.io/iptv/languages/lee.m3u) |
 | Lin | [`https://jogindharr.github.io/iptv/languages/lin.m3u`](https://jogindharr.github.io/iptv/languages/lin.m3u) |
@@ -219,7 +210,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Spa | [`https://jogindharr.github.io/iptv/languages/spa.m3u`](https://jogindharr.github.io/iptv/languages/spa.m3u) |
 | Sqi | [`https://jogindharr.github.io/iptv/languages/sqi.m3u`](https://jogindharr.github.io/iptv/languages/sqi.m3u) |
 | Srp | [`https://jogindharr.github.io/iptv/languages/srp.m3u`](https://jogindharr.github.io/iptv/languages/srp.m3u) |
-| Ssp | [`https://jogindharr.github.io/iptv/languages/ssp.m3u`](https://jogindharr.github.io/iptv/languages/ssp.m3u) |
 | Ssw | [`https://jogindharr.github.io/iptv/languages/ssw.m3u`](https://jogindharr.github.io/iptv/languages/ssw.m3u) |
 | Stj | [`https://jogindharr.github.io/iptv/languages/stj.m3u`](https://jogindharr.github.io/iptv/languages/stj.m3u) |
 | Sun | [`https://jogindharr.github.io/iptv/languages/sun.m3u`](https://jogindharr.github.io/iptv/languages/sun.m3u) |
@@ -235,7 +225,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Tgk | [`https://jogindharr.github.io/iptv/languages/tgk.m3u`](https://jogindharr.github.io/iptv/languages/tgk.m3u) |
 | Tgl | [`https://jogindharr.github.io/iptv/languages/tgl.m3u`](https://jogindharr.github.io/iptv/languages/tgl.m3u) |
 | Tha | [`https://jogindharr.github.io/iptv/languages/tha.m3u`](https://jogindharr.github.io/iptv/languages/tha.m3u) |
-| Thr | [`https://jogindharr.github.io/iptv/languages/thr.m3u`](https://jogindharr.github.io/iptv/languages/thr.m3u) |
 | Tig | [`https://jogindharr.github.io/iptv/languages/tig.m3u`](https://jogindharr.github.io/iptv/languages/tig.m3u) |
 | Tir | [`https://jogindharr.github.io/iptv/languages/tir.m3u`](https://jogindharr.github.io/iptv/languages/tir.m3u) |
 | Tmh | [`https://jogindharr.github.io/iptv/languages/tmh.m3u`](https://jogindharr.github.io/iptv/languages/tmh.m3u) |
