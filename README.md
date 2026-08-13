@@ -96,7 +96,6 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Est | [`https://jogindharr.github.io/iptv/languages/est.m3u`](https://jogindharr.github.io/iptv/languages/est.m3u) |
 | Eus | [`https://jogindharr.github.io/iptv/languages/eus.m3u`](https://jogindharr.github.io/iptv/languages/eus.m3u) |
 | Ewe | [`https://jogindharr.github.io/iptv/languages/ewe.m3u`](https://jogindharr.github.io/iptv/languages/ewe.m3u) |
-| Fao | [`https://jogindharr.github.io/iptv/languages/fao.m3u`](https://jogindharr.github.io/iptv/languages/fao.m3u) |
 | Far | [`https://jogindharr.github.io/iptv/languages/far.m3u`](https://jogindharr.github.io/iptv/languages/far.m3u) |
 | Fas | [`https://jogindharr.github.io/iptv/languages/fas.m3u`](https://jogindharr.github.io/iptv/languages/fas.m3u) |
 | Fil | [`https://jogindharr.github.io/iptv/languages/fil.m3u`](https://jogindharr.github.io/iptv/languages/fil.m3u) |
