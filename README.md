@@ -79,6 +79,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Box | [`https://jogindharr.github.io/iptv/languages/box.m3u`](https://jogindharr.github.io/iptv/languages/box.m3u) |
 | Bul | [`https://jogindharr.github.io/iptv/languages/bul.m3u`](https://jogindharr.github.io/iptv/languages/bul.m3u) |
 | Cat | [`https://jogindharr.github.io/iptv/languages/cat.m3u`](https://jogindharr.github.io/iptv/languages/cat.m3u) |
+| Ceb | [`https://jogindharr.github.io/iptv/languages/ceb.m3u`](https://jogindharr.github.io/iptv/languages/ceb.m3u) |
 | Ces | [`https://jogindharr.github.io/iptv/languages/ces.m3u`](https://jogindharr.github.io/iptv/languages/ces.m3u) |
 | Cgg | [`https://jogindharr.github.io/iptv/languages/cgg.m3u`](https://jogindharr.github.io/iptv/languages/cgg.m3u) |
 | Cmn | [`https://jogindharr.github.io/iptv/languages/cmn.m3u`](https://jogindharr.github.io/iptv/languages/cmn.m3u) |
