@@ -111,6 +111,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Gle | [`https://jogindharr.github.io/iptv/languages/gle.m3u`](https://jogindharr.github.io/iptv/languages/gle.m3u) |
 | Glg | [`https://jogindharr.github.io/iptv/languages/glg.m3u`](https://jogindharr.github.io/iptv/languages/glg.m3u) |
 | Gom | [`https://jogindharr.github.io/iptv/languages/gom.m3u`](https://jogindharr.github.io/iptv/languages/gom.m3u) |
+| Grn | [`https://jogindharr.github.io/iptv/languages/grn.m3u`](https://jogindharr.github.io/iptv/languages/grn.m3u) |
 | Guj | [`https://jogindharr.github.io/iptv/languages/guj.m3u`](https://jogindharr.github.io/iptv/languages/guj.m3u) |
 | Gux | [`https://jogindharr.github.io/iptv/languages/gux.m3u`](https://jogindharr.github.io/iptv/languages/gux.m3u) |
 | Hat | [`https://jogindharr.github.io/iptv/languages/hat.m3u`](https://jogindharr.github.io/iptv/languages/hat.m3u) |
