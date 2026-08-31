@@ -152,6 +152,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Lah | [`https://jogindharr.github.io/iptv/languages/lah.m3u`](https://jogindharr.github.io/iptv/languages/lah.m3u) |
 | Laj | [`https://jogindharr.github.io/iptv/languages/laj.m3u`](https://jogindharr.github.io/iptv/languages/laj.m3u) |
 | Lao | [`https://jogindharr.github.io/iptv/languages/lao.m3u`](https://jogindharr.github.io/iptv/languages/lao.m3u) |
+| Lat | [`https://jogindharr.github.io/iptv/languages/lat.m3u`](https://jogindharr.github.io/iptv/languages/lat.m3u) |
 | Lav | [`https://jogindharr.github.io/iptv/languages/lav.m3u`](https://jogindharr.github.io/iptv/languages/lav.m3u) |
 | Lee | [`https://jogindharr.github.io/iptv/languages/lee.m3u`](https://jogindharr.github.io/iptv/languages/lee.m3u) |
 | Lin | [`https://jogindharr.github.io/iptv/languages/lin.m3u`](https://jogindharr.github.io/iptv/languages/lin.m3u) |
