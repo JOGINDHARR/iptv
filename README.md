@@ -121,6 +121,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Her | [`https://jogindharr.github.io/iptv/languages/her.m3u`](https://jogindharr.github.io/iptv/languages/her.m3u) |
 | Hin | [`https://jogindharr.github.io/iptv/languages/hin.m3u`](https://jogindharr.github.io/iptv/languages/hin.m3u) |
 | Hmn | [`https://jogindharr.github.io/iptv/languages/hmn.m3u`](https://jogindharr.github.io/iptv/languages/hmn.m3u) |
+| Hmo | [`https://jogindharr.github.io/iptv/languages/hmo.m3u`](https://jogindharr.github.io/iptv/languages/hmo.m3u) |
 | Hne | [`https://jogindharr.github.io/iptv/languages/hne.m3u`](https://jogindharr.github.io/iptv/languages/hne.m3u) |
 | Hrv | [`https://jogindharr.github.io/iptv/languages/hrv.m3u`](https://jogindharr.github.io/iptv/languages/hrv.m3u) |
 | Hun | [`https://jogindharr.github.io/iptv/languages/hun.m3u`](https://jogindharr.github.io/iptv/languages/hun.m3u) |
@@ -231,6 +232,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Tig | [`https://jogindharr.github.io/iptv/languages/tig.m3u`](https://jogindharr.github.io/iptv/languages/tig.m3u) |
 | Tir | [`https://jogindharr.github.io/iptv/languages/tir.m3u`](https://jogindharr.github.io/iptv/languages/tir.m3u) |
 | Tmh | [`https://jogindharr.github.io/iptv/languages/tmh.m3u`](https://jogindharr.github.io/iptv/languages/tmh.m3u) |
+| Tpi | [`https://jogindharr.github.io/iptv/languages/tpi.m3u`](https://jogindharr.github.io/iptv/languages/tpi.m3u) |
 | Tso | [`https://jogindharr.github.io/iptv/languages/tso.m3u`](https://jogindharr.github.io/iptv/languages/tso.m3u) |
 | Ttj | [`https://jogindharr.github.io/iptv/languages/ttj.m3u`](https://jogindharr.github.io/iptv/languages/ttj.m3u) |
 | Tuk | [`https://jogindharr.github.io/iptv/languages/tuk.m3u`](https://jogindharr.github.io/iptv/languages/tuk.m3u) |
