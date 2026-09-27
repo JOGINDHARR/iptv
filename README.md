@@ -164,6 +164,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Luo | [`https://jogindharr.github.io/iptv/languages/luo.m3u`](https://jogindharr.github.io/iptv/languages/luo.m3u) |
 | Lus | [`https://jogindharr.github.io/iptv/languages/lus.m3u`](https://jogindharr.github.io/iptv/languages/lus.m3u) |
 | Mai | [`https://jogindharr.github.io/iptv/languages/mai.m3u`](https://jogindharr.github.io/iptv/languages/mai.m3u) |
+| Mak | [`https://jogindharr.github.io/iptv/languages/mak.m3u`](https://jogindharr.github.io/iptv/languages/mak.m3u) |
 | Mal | [`https://jogindharr.github.io/iptv/languages/mal.m3u`](https://jogindharr.github.io/iptv/languages/mal.m3u) |
 | Man | [`https://jogindharr.github.io/iptv/languages/man.m3u`](https://jogindharr.github.io/iptv/languages/man.m3u) |
 | Mar | [`https://jogindharr.github.io/iptv/languages/mar.m3u`](https://jogindharr.github.io/iptv/languages/mar.m3u) |
