@@ -200,6 +200,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Rkm | [`https://jogindharr.github.io/iptv/languages/rkm.m3u`](https://jogindharr.github.io/iptv/languages/rkm.m3u) |
 | Rom | [`https://jogindharr.github.io/iptv/languages/rom.m3u`](https://jogindharr.github.io/iptv/languages/rom.m3u) |
 | Ron | [`https://jogindharr.github.io/iptv/languages/ron.m3u`](https://jogindharr.github.io/iptv/languages/ron.m3u) |
+| Run | [`https://jogindharr.github.io/iptv/languages/run.m3u`](https://jogindharr.github.io/iptv/languages/run.m3u) |
 | Rus | [`https://jogindharr.github.io/iptv/languages/rus.m3u`](https://jogindharr.github.io/iptv/languages/rus.m3u) |
 | Sah | [`https://jogindharr.github.io/iptv/languages/sah.m3u`](https://jogindharr.github.io/iptv/languages/sah.m3u) |
 | Sat | [`https://jogindharr.github.io/iptv/languages/sat.m3u`](https://jogindharr.github.io/iptv/languages/sat.m3u) |
