@@ -45,6 +45,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Travel | [`https://jogindharr.github.io/iptv/categories/travel.m3u`](https://jogindharr.github.io/iptv/categories/travel.m3u) |
 | Undefined | [`https://jogindharr.github.io/iptv/categories/undefined.m3u`](https://jogindharr.github.io/iptv/categories/undefined.m3u) |
 | Weather | [`https://jogindharr.github.io/iptv/categories/weather.m3u`](https://jogindharr.github.io/iptv/categories/weather.m3u) |
+| Woman | [`https://jogindharr.github.io/iptv/categories/woman.m3u`](https://jogindharr.github.io/iptv/categories/woman.m3u) |
 | Xxx | [`https://jogindharr.github.io/iptv/categories/xxx.m3u`](https://jogindharr.github.io/iptv/categories/xxx.m3u) |
 
 ### Languages
@@ -60,6 +61,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Alz | [`https://jogindharr.github.io/iptv/languages/alz.m3u`](https://jogindharr.github.io/iptv/languages/alz.m3u) |
 | Amh | [`https://jogindharr.github.io/iptv/languages/amh.m3u`](https://jogindharr.github.io/iptv/languages/amh.m3u) |
 | Ara | [`https://jogindharr.github.io/iptv/languages/ara.m3u`](https://jogindharr.github.io/iptv/languages/ara.m3u) |
+| Arb | [`https://jogindharr.github.io/iptv/languages/arb.m3u`](https://jogindharr.github.io/iptv/languages/arb.m3u) |
 | Arz | [`https://jogindharr.github.io/iptv/languages/arz.m3u`](https://jogindharr.github.io/iptv/languages/arz.m3u) |
 | Asm | [`https://jogindharr.github.io/iptv/languages/asm.m3u`](https://jogindharr.github.io/iptv/languages/asm.m3u) |
 | Asp | [`https://jogindharr.github.io/iptv/languages/asp.m3u`](https://jogindharr.github.io/iptv/languages/asp.m3u) |
