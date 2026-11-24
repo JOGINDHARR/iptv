@@ -83,6 +83,7 @@ Access your playlists here: [https://jogindharr.github.io/iptv/](https://jogindh
 | Ceb | [`https://jogindharr.github.io/iptv/languages/ceb.m3u`](https://jogindharr.github.io/iptv/languages/ceb.m3u) |
 | Ces | [`https://jogindharr.github.io/iptv/languages/ces.m3u`](https://jogindharr.github.io/iptv/languages/ces.m3u) |
 | Cgg | [`https://jogindharr.github.io/iptv/languages/cgg.m3u`](https://jogindharr.github.io/iptv/languages/cgg.m3u) |
+| Ckb | [`https://jogindharr.github.io/iptv/languages/ckb.m3u`](https://jogindharr.github.io/iptv/languages/ckb.m3u) |
 | Cmn | [`https://jogindharr.github.io/iptv/languages/cmn.m3u`](https://jogindharr.github.io/iptv/languages/cmn.m3u) |
 | Cnr | [`https://jogindharr.github.io/iptv/languages/cnr.m3u`](https://jogindharr.github.io/iptv/languages/cnr.m3u) |
 | Cnu | [`https://jogindharr.github.io/iptv/languages/cnu.m3u`](https://jogindharr.github.io/iptv/languages/cnu.m3u) |
